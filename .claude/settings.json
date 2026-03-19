@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(codex exec*)",
+      "Bash(gemini -p*)",
+      "Bash(timeout*codex*)",
+      "Bash(timeout*gemini*)",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(python *)",
+      "Bash(pip *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(mkdir *)"
+    ]
+  }
+}
