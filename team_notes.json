@@ -1,0 +1,296 @@
+{
+  "version": "1.0",
+  "teams": {
+    "Team 1": {
+      "overview": "Doctors: Chanda, Mundra, Leavitt, Karam   (Feb 2026, unsure of Atkinson's status) \nExceptions:\n- If Yu (Team 5) is out, do not assign Atkinson to Team 1 call (verify current status)  ( need to verify,  this probably has changed now that Wilbeck is on Team 5)",
+      "hospitals": "- St. Thomas West\n  Day call: Same physician as night call\n  Night call: Handled by Team 1\n- Sumner Regional\n  Day call: Choma default, Molini backup (Team 4)\n  Night call: Follows St. Thomas West\n  Notes: If both Choma and Molini are out, Team 1 night call may act as backup (unconfirmed)",
+      "calendar": "Type: Shared Group Calendar\nPlatform: Outlook\nOwner: Leavitt\nScope: Covers St. Thomas West and Sumner",
+      "distribution": "Method: Email PDF",
+      "notes": "- Team 4 drives Sumner day call\n- Verify Sumner backup behavior if coverage appears unclear",
+      "overview_text": "Doctors: Chanda, Mundra, Leavitt, Karam   (Feb 2026, unsure of Atkinson's status)\nExceptions:\n- If Yu (Team 5) is out, do not assign Atkinson to Team 1 call (verify current status)  ( need to verify,  this probably has changed now that Wilbeck is on Team 5)",
+      "hospitals_text": "- St. Thomas West\n  Day call: Same physician as night call\n  Night call: Handled by Team 1\n- Sumner Regional\n  Day call: Choma default, Molini backup (Team 4)\n  Night call: Follows St. Thomas West\n  Notes: If both Choma and Molini are out, Team 1 night call may act as backup (unconfirmed)",
+      "calendar_text": "Type: Shared Group Calendar\nPlatform: Outlook\nOwner: Leavitt\nScope: Covers St. Thomas West and Sumner",
+      "distribution_text": "Method: Email PDF",
+      "notes_text": "- Team 4 drives Sumner day call\n- Verify Sumner backup behavior if coverage appears unclear"
+    },
+    "Team 2": {
+      "overview": {
+        "doctors": [
+          "Wilbeck",
+          "Coleman",
+          "Cox",
+          "Karam"
+        ],
+        "pairings": [],
+        "exceptions": [
+          "Friday night begins at 2:00 PM as of 10/1/2025",
+          "Planned transition: Soni will take over Team 2 calendar ownership"
+        ]
+      },
+      "hospitals": [
+        {
+          "name": "Centennial (CMC)",
+          "day_call": "See calendar; Soni assists with day call only",
+          "night_call": "Handled by Team 2"
+        },
+        {
+          "name": "Southern Hills",
+          "day_call": "Soni default; backup per Team 2 calendar",
+          "night_call": "Follows Centennial"
+        },
+        {
+          "name": "Select Specialty",
+          "day_call": "Coleman default; backup coordinated by Wilbeck",
+          "night_call": "Emergencies only; follows Centennial"
+        }
+      ],
+      "calendar": {
+        "type": "Sub-calendar (Personal)",
+        "platform": "Outlook",
+        "owner": "Soni",
+        "scope": "Transitioning from Wilbeck-managed Google calendars"
+      },
+      "distribution": {
+        "method": "Email PDF",
+        "notes": []
+      },
+      "notes": [
+        "Southern Hills scheduling currently transitioning from Word documents",
+        "Verify calendars if Word docs and online calendars do not match"
+      ]
+    },
+    "Team 3": {
+      "overview": {
+        "doctors": [
+          "Rowbatham",
+          "Asfar",
+          "Venkatesh",
+          "Carlson"
+        ],
+        "pairings": [
+          {
+            "doctors": [
+              "Asfar",
+              "Venkatesh"
+            ],
+            "scope": "unspecified",
+            "notes": "Frequently act as backups for each other"
+          }
+        ],
+        "exceptions": []
+      },
+      "hospitals": [
+        {
+          "name": "Skyline",
+          "day_call": "Special rotation managed outside the calendar",
+          "night_call": "Handled by Team 3"
+        },
+        {
+          "name": "Hendersonville",
+          "day_call": "Venkatesh default, Asfar backup",
+          "night_call": "Follows Skyline"
+        }
+      ],
+      "calendar": {
+        "type": "Shared Group Calendar",
+        "platform": "Outlook",
+        "owner": "Rowbatham",
+        "scope": "Night call only"
+      },
+      "distribution": {
+        "method": "Email PDF",
+        "notes": []
+      },
+      "notes": [
+        "Skyline day call rotation is manual and not fully documented",
+        "Calendar reflects night call only"
+      ]
+    },
+    "Team 4": {
+      "overview": {
+        "doctors": [
+          "Choma",
+          "Molini",
+          "Khan",
+          "McCoy"
+        ],
+        "pairings": [
+          {
+            "doctors": [
+              "Choma",
+              "Molini"
+            ],
+            "scope": "day",
+            "notes": "Primary day-call pairing"
+          }
+        ],
+        "exceptions": []
+      },
+      "hospitals": [
+        {
+          "name": "St. Thomas Midtown",
+          "day_call": "Molini default, Choma backup",
+          "night_call": "Handled by Team 4"
+        },
+        {
+          "name": "Summit",
+          "day_call": "Khan default, McCoy backup",
+          "night_call": "Follows St. Thomas Midtown"
+        },
+        {
+          "name": "Vanderbilt Lebanon (VWCH)",
+          "day_call": "McCoy default, Khan backup",
+          "night_call": "Follows St. Thomas Midtown"
+        }
+      ],
+      "calendar": {
+        "type": "Shared Group Calendar",
+        "platform": "Outlook",
+        "owner": "Choma / McCoy",
+        "scope": ""
+      },
+      "distribution": {
+        "method": "Email PDF",
+        "notes": []
+      },
+      "notes": [
+        "Team 4 supports Sumner day call for Team 1",
+        "If calendar is incomplete, it is often faster to populate and request confirmation"
+      ]
+    },
+    "Team 5": {
+      "overview": {
+        "doctors": [
+          "Yu",
+          "Soni",
+          "Rezk",
+          "Cardona"
+        ],
+        "pairings": [
+          {
+            "doctors": [
+              "Rezk",
+              "Cardona"
+            ],
+            "scope": "day",
+            "notes": "Alternate weekly for Maury day call"
+          }
+        ],
+        "exceptions": []
+      },
+      "hospitals": [
+        {
+          "name": "Maury Regional",
+          "day_call": "Alternates weekly between Rezk and Cardona",
+          "night_call": "Handled by Team 5"
+        },
+        {
+          "name": "Horizon (Dickson)",
+          "day_call": "Yu default; Atkinson then Leavitt backup",
+          "night_call": "Follows Maury"
+        },
+        {
+          "name": "Williamson / Encompass",
+          "day_call": "Wilbeck default (Team 2); backups coordinated via Team 2",
+          "night_call": "Follows Maury"
+        }
+      ],
+      "calendar": {
+        "type": "Sub-calendar (Personal)",
+        "platform": "Outlook",
+        "owner": "Rezk",
+        "scope": "Maury is the driver calendar"
+      },
+      "distribution": {
+        "method": "Email PDF",
+        "notes": []
+      },
+      "notes": [
+        "Horizon and Williamson night call mirror Maury",
+        "Ignore older Maury rotation calendars"
+      ]
+    },
+    "Team 6": {
+      "overview": {
+        "doctors": [
+          "Green",
+          "Omitowoju",
+          "Studdard",
+          "Chaney"
+        ],
+        "pairings": [],
+        "exceptions": []
+      },
+      "hospitals": [
+        {
+          "name": "St. Thomas Rutherford",
+          "day_call": "Rotates Green / Studdard / Chaney (see Excel)",
+          "night_call": "Handled by Team 6"
+        },
+        {
+          "name": "Stonecrest",
+          "day_call": "Rotates Green / Studdard / Chaney",
+          "night_call": "Follows St. Thomas Rutherford"
+        }
+      ],
+      "calendar": {
+        "type": "No Online Calendar",
+        "platform": "Manual",
+        "owner": "Green / Studdard",
+        "scope": ""
+      },
+      "distribution": {
+        "method": "Email PDF",
+        "notes": []
+      },
+      "notes": [
+        "Schedules created via Excel and distributed manually",
+        "Vacation status may require checking MD Vacation calendar or physical board"
+      ]
+    },
+    "Team 7": {
+      "overview": {
+        "doctors": [
+          "Hughes",
+          "Katragadda",
+          "Jalota"
+        ],
+        "pairings": [],
+        "exceptions": [
+          "Occasional non-NA physicians used for backup coverage"
+        ]
+      },
+      "hospitals": [
+        {
+          "name": "Tennova Clarksville",
+          "day_call": "Hughes / Katragadda rotation (Word doc)",
+          "night_call": "Handled by Team 7"
+        },
+        {
+          "name": "Jennie Stuart Medical Center",
+          "day_call": "Mixed coverage (PPT file)",
+          "night_call": "See PPT file"
+        },
+        {
+          "name": "Deaconess",
+          "day_call": "Mixed coverage (PPT file)",
+          "night_call": "See PPT file"
+        }
+      ],
+      "calendar": {
+        "type": "No Online Calendar",
+        "platform": "Manual",
+        "owner": "Katragadda / Jalota",
+        "scope": ""
+      },
+      "distribution": {
+        "method": "Email PDF",
+        "notes": []
+      },
+      "notes": [
+        "Multiple document formats in use (Word / PowerPoint)",
+        "Verify correct source file if discrepancies appear"
+      ]
+    }
+  }
+}

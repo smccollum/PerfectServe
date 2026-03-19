@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "doctors": [
+    { "id": "atkinson", "last_name": "Atkinson", "full_name": "Atkinson", "active": true },
+    { "id": "chanda", "last_name": "Chanda", "full_name": "Chanda", "active": true },
+    { "id": "leavitt", "last_name": "Leavitt", "full_name": "Leavitt", "active": true },
+    { "id": "mundra", "last_name": "Mundra", "full_name": "Mundra", "active": true },
+
+    { "id": "coleman", "last_name": "Coleman", "full_name": "Coleman", "active": true },
+    { "id": "cox", "last_name": "Cox", "full_name": "Cox", "active": true },
+    { "id": "karam", "last_name": "Karam", "full_name": "Karam", "active": true },
+    { "id": "wilbeck", "last_name": "Wilbeck", "full_name": "Wilbeck", "active": true },
+
+    { "id": "asfar", "last_name": "Asfar", "full_name": "Asfar", "active": true },
+    { "id": "carlson", "last_name": "Carlson", "full_name": "Carlson", "active": true },
+    { "id": "rowbatham", "last_name": "Rowbatham", "full_name": "Rowbatham", "active": true },
+    { "id": "venkatesh", "last_name": "Venkatesh", "full_name": "Venkatesh", "active": true },
+
+    { "id": "choma", "last_name": "Choma", "full_name": "Choma", "active": true },
+    { "id": "khan", "last_name": "Khan", "full_name": "Khan", "active": true },
+    { "id": "mccoy", "last_name": "McCoy", "full_name": "McCoy", "active": true },
+    { "id": "molini", "last_name": "Molini", "full_name": "Molini", "active": true },
+
+    { "id": "cardona", "last_name": "Cardona", "full_name": "Cardona", "active": true },
+    { "id": "rezk", "last_name": "Rezk", "full_name": "Rezk", "active": true },
+    { "id": "soni", "last_name": "Soni", "full_name": "Soni", "active": true },
+    { "id": "yu", "last_name": "Yu", "full_name": "Yu", "active": true },
+
+    { "id": "chaney", "last_name": "Chaney", "full_name": "Chaney", "active": true },
+    { "id": "green", "last_name": "Green", "full_name": "Green", "active": true },
+    { "id": "omitowoju", "last_name": "Omitowoju", "full_name": "Omitowoju", "active": true },
+    { "id": "studdard", "last_name": "Studdard", "full_name": "Studdard", "active": true },
+
+    { "id": "hughes", "last_name": "Hughes", "full_name": "Hughes", "active": true },
+    { "id": "jalota", "last_name": "Jalota", "full_name": "Jalota", "active": true },
+    { "id": "katragadda", "last_name": "Katragadda", "full_name": "Katragadda", "active": true }
+  ],
+  "teams": [
+    { "id": "team-1", "display_name": "Team 1", "active": true },
+    { "id": "team-2", "display_name": "Team 2", "active": true },
+    { "id": "team-3", "display_name": "Team 3", "active": true },
+    { "id": "team-4", "display_name": "Team 4", "active": true },
+    { "id": "team-5", "display_name": "Team 5", "active": true },
+    { "id": "team-6", "display_name": "Team 6", "active": true },
+    { "id": "team-7", "display_name": "Team 7", "active": true }
+  ],
+  "facilities": [
+    { "id": "deaconess", "full_name": "Deaconess", "short_name": "Deaconess", "aliases": [], "active": true },
+    { "id": "cmc", "full_name": "CMC", "short_name": "CMC", "aliases": [], "active": true },
+    { "id": "hendersonville", "full_name": "Hendersonville", "short_name": "Hendersonville", "aliases": [], "active": true },
+    { "id": "horizon", "full_name": "Horizon", "short_name": "Horizon", "aliases": [], "active": true },
+    { "id": "jsmc", "full_name": "JSMC", "short_name": "JSMC", "aliases": [], "active": true },
+    { "id": "maury-regional", "full_name": "Maury Regional", "short_name": "Maury Regional", "aliases": [], "active": true },
+    { "id": "select-specialty", "full_name": "Select Specialty", "short_name": "Select Specialty", "aliases": [], "active": true },
+    { "id": "skyline", "full_name": "Skyline", "short_name": "Skyline", "aliases": [], "active": true },
+    { "id": "southern-hills", "full_name": "Southern Hills", "short_name": "Southern Hills", "aliases": [], "active": true },
+    { "id": "st-thomas-midtown", "full_name": "St Thomas Midtown", "short_name": "St Thomas Midtown", "aliases": ["St. Thomas Midtown"], "active": true },
+    { "id": "st-thomas-rutherford", "full_name": "St. Thomas Rutherford", "short_name": "St. Thomas Rutherford", "aliases": ["St Thomas Rutherford"], "active": true },
+    { "id": "st-thomas-west", "full_name": "St. Thomas West", "short_name": "St. Thomas West", "aliases": ["St Thomas West"], "active": true },
+    { "id": "stonecrest-trustpoint", "full_name": "Stonecrest / Trustpoint", "short_name": "Stonecrest / Trustpoint", "aliases": ["Stonecrest"], "active": true },
+    { "id": "summit", "full_name": "Summit", "short_name": "Summit", "aliases": [], "active": true },
+    { "id": "sumner-regional", "full_name": "Sumner Regional", "short_name": "Sumner Regional", "aliases": [], "active": true },
+    { "id": "tennova-clarksville", "full_name": "Tennova Clarksville", "short_name": "Tennova Clarksville", "aliases": [], "active": true },
+    { "id": "vwch", "full_name": "VWCH", "short_name": "VWCH", "aliases": [], "active": true },
+    { "id": "williamson-encompass", "full_name": "Williamson-Encompass", "short_name": "Williamson-Encompass", "aliases": ["Williamson / Encompass"], "active": true }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "version": "1.0",
+  "teams": [
+    {
+      "id": "team-1",
+      "doctor_ids": [
+        "atkinson",
+        "chanda",
+        "leavitt",
+        "mundra"
+      ],
+      "facilities": [
+        {
+          "id": "st-thomas-west",
+          "display_name": null
+        },
+        {
+          "id": "sumner-regional",
+          "display_name": null
+        }
+      ],
+      "extra_assignment_doctors": [
+        {
+          "facility_id": "sumner-regional",
+          "doctor_ids": [
+            "choma",
+            "molini"
+          ]
+        },
+        {
+          "facility_id": "st-thomas-west",
+          "doctor_ids": [
+            "karam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team-2",
+      "doctor_ids": [
+        "coleman",
+        "cox",
+        "karam",
+        "soni"
+      ],
+      "facilities": [
+        {
+          "id": "cmc",
+          "display_name": "Centennial (CMC)"
+        },
+        {
+          "id": "southern-hills",
+          "display_name": null
+        },
+        {
+          "id": "select-specialty",
+          "display_name": null
+        }
+      ],
+      "extra_assignment_doctors": [
+        {
+          "facility_id": "southern-hills",
+          "doctor_ids": [
+            "soni"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team-3",
+      "doctor_ids": [
+        "asfar",
+        "carlson",
+        "rowbatham",
+        "venkatesh"
+      ],
+      "facilities": [
+        {
+          "id": "skyline",
+          "display_name": null
+        },
+        {
+          "id": "hendersonville",
+          "display_name": null
+        }
+      ],
+      "extra_assignment_doctors": []
+    },
+    {
+      "id": "team-4",
+      "doctor_ids": [
+        "choma",
+        "khan",
+        "mccoy",
+        "molini"
+      ],
+      "facilities": [
+        {
+          "id": "st-thomas-midtown",
+          "display_name": "St. Thomas Midtown"
+        },
+        {
+          "id": "summit",
+          "display_name": null
+        },
+        {
+          "id": "vwch",
+          "display_name": "Vanderbilt Lebanon (VWCH)"
+        }
+      ],
+      "extra_assignment_doctors": []
+    },
+    {
+      "id": "team-5",
+      "doctor_ids": [
+        "cardona",
+        "rezk",
+        "wilbeck",
+        "yu"
+      ],
+      "facilities": [
+        {
+          "id": "maury-regional",
+          "display_name": null
+        },
+        {
+          "id": "horizon",
+          "display_name": "Horizon (Dickson)"
+        },
+        {
+          "id": "williamson-encompass",
+          "display_name": "Williamson / Encompass"
+        }
+      ],
+      "extra_assignment_doctors": [
+        {
+          "facility_id": "horizon",
+          "doctor_ids": [
+            "atkinson",
+            "leavitt"
+          ]
+        },
+        {
+          "facility_id": "williamson-encompass",
+          "doctor_ids": [
+            "wilbeck",
+            "soni"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team-6",
+      "doctor_ids": [
+        "chaney",
+        "green",
+        "omitowoju",
+        "studdard"
+      ],
+      "facilities": [
+        {
+          "id": "st-thomas-rutherford",
+          "display_name": null
+        },
+        {
+          "id": "stonecrest-trustpoint",
+          "display_name": "Stonecrest"
+        }
+      ],
+      "extra_assignment_doctors": [
+        {
+          "facility_id": "stonecrest-trustpoint",
+          "doctor_ids": [
+            "atkinson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team-7",
+      "doctor_ids": [
+        "hughes",
+        "jalota",
+        "katragadda"
+      ],
+      "facilities": [
+        {
+          "id": "tennova-clarksville",
+          "display_name": null
+        },
+        {
+          "id": "jsmc",
+          "display_name": "Jennie Stuart Medical Center"
+        },
+        {
+          "id": "deaconess",
+          "display_name": null
+        }
+      ],
+      "extra_assignment_doctors": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Node
+node_modules/
+package-lock.json
+
+# Auth & credentials — NEVER commit these
+scraper/auth.json
+*.env
+.env.*
+
+# Scraped output data
+scraper/*-shifts.json
+scraper/shifts.json
+scraper/api-dump.json
+
+# Debug artifacts
+scraper/*.html
+scraper/*.png
+scraper/*.txt
+
+# Generated output
+*.pdf
+test_output.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# System config (may contain Azure credentials)
+calendarapp_system_config.json
