@@ -1,0 +1,458 @@
+[
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFZZBRmg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsquAAA=",
+    "subject": "Karam",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-05T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-06T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFZY/l9Q==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUqE5n2AAA=",
+    "subject": "Soni Off - S. Hills 3-9-3-11 Coleman, 3-12-3-15 Karam",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-07T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFV5CI7g==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUzojAhAAA=",
+    "subject": "Cox Off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-07T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFZQJC9g==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqtAAA=",
+    "subject": "Soni",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-09T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-10T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFZZBw4w==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqsAAA=",
+    "subject": "Karam",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-10T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-11T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFV5CJVw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqrAAA=",
+    "subject": "Coleman",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-11T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-12T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFcsWy2g==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqqAAA=",
+    "subject": "Cox",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-12T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFZY/mAA==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqxAAA=",
+    "subject": "Coleman Off - Karam on Select",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-14T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFc9l+1Q==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqpAAA=",
+    "subject": "Linfert",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-17T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFayij3Q==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqyAAA=",
+    "subject": "Coleman off - Select Linfert",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-21T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFbH4uvA==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAVvkmkuAAA=",
+    "subject": "CMC with Cox - M-W Soni, Th-F Karam",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-21T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFcsWy0g==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqoAAA=",
+    "subject": "Cox",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-17T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFaygemw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqnAAA=",
+    "subject": "Soni",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFcsWyzw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqmAAA=",
+    "subject": "Coleman",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-20T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFdQ253A==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqlAAA=",
+    "subject": "Cox",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-23T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-24T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFaygekw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqkAAA=",
+    "subject": "Coleman",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-24T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-25T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFZZBRkg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqjAAA=",
+    "subject": "Karam",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-25T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFaygejw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUbnsqiAAA=",
+    "subject": "Soni",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-27T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFV5CI+g==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAUbnfdqAAAeHxF5HB9lQKOTx-DOx36TAAUoht8_AAA=",
+    "subject": "Karam on Vacation",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-28T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-04-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  }
+]

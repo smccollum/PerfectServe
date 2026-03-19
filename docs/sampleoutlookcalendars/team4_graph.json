@@ -1,0 +1,554 @@
+[
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz3Ew==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw91AAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-02T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-03T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz2qQ==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_OAAA=",
+    "subject": "Choma",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-03T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-04T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz2pQ==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_PAAA=",
+    "subject": "Khan",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-04T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-05T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz2rg==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_NAAA=",
+    "subject": "Molini",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-05T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-06T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAExGl94Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw81AAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-06T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-09T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH6A==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_GAAA=",
+    "subject": "Choma",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-09T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-10T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH5Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATab72yAAA=",
+    "subject": "Khan off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-09T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-12T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH7Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw95AAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-10T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-11T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH0w==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATab720AAA=",
+    "subject": "Choma",
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\n<div></div>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2026-03-11T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-12T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH3Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATAEd4IAAA=",
+    "subject": "Molini",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-12T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE1ednjw==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATVhBR6AAA=",
+    "subject": "Choma off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-24T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH4w==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_IAAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-17T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH1w==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATab72zAAA=",
+    "subject": "Khan off",
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\n<div></div>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH8Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw93AAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-17T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH0A==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATab721AAA=",
+    "subject": "Khan",
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\n<div></div>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE1ebyRQ==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASZl1UjAAA=",
+    "subject": "McCoy off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-23T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOHzQ==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATab722AAA=",
+    "subject": "Molini",
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\n<div></div>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-20T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOH4Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_KAAA=",
+    "subject": "Khan",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-23T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-24T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz20Q==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_FAAA=",
+    "subject": "Choma",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-24T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-25T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAE2tOHyQ==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAATab723AAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\n<div class=\"cal_a5a2\">\r\n<div>\r\n<div></div>\r\n</div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2026-03-25T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz2+w==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw97AAA=",
+    "subject": "Molini",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-27T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz3Bw==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw94AAA=",
+    "subject": "McCoy",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-30T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-31T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"8a45vwNAjUiXQC1odXu5UQAEkiz2tw==\"",
+    "id": "AAMkADU2MWEyMzY0LTdmZTMtNGMxYS1iYWFjLWNiNDZiMDMxNGNhOABGAAAAAAA81zM2irudQ4y_3UnuQ6LGBwDxrjm-A0CNSJdALWh1e7lRAAAAAAENAADxrjm-A0CNSJdALWh1e7lRAASQmw_LAAA=",
+    "subject": "Khan",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-31T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-04-01T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  }
+]

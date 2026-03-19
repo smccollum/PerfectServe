@@ -1,0 +1,458 @@
+[
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFayh+mA==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX8gAAA=",
+    "subject": "Wilbeck Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-03T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-04T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi18Q==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX8fAAA=",
+    "subject": "Yu nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-04T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-05T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFayh+lQ==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX8eAAA=",
+    "subject": "Cardona Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-05T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-06T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFbH60GQ==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX_gAAA=",
+    "subject": "Cardona Daytime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-06T09:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-06T09:30:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEjSSA==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX-TAAA=",
+    "subject": "Spring Break 9-13; Yu/Cardona off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-07T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2Ug==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX9VAAA=",
+    "subject": "Wilbeck Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-09T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-10T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEjSCA==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX-CAAA=",
+    "subject": "Rezk Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-10T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-11T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEjSBQ==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX-BAAA=",
+    "subject": "Rezk Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-12T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2nw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX_IAAA=",
+    "subject": "Rezk Daytime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-13T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-14T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2Tg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX9UAAA=",
+    "subject": "Wilbeck Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2ZQ==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX9jAAA=",
+    "subject": "Rezk off 3/18-20",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-18T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-23T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2Sw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX9TAAA=",
+    "subject": "Yu Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-20T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEjRxw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX_fAAA=",
+    "subject": "Cardona Daytime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-20T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-21T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2QA==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX9SAAA=",
+    "subject": "Rezk",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-23T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-24T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2Dw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX83AAA=",
+    "subject": "Wilbeck",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-25T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2Fg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX80AAA=",
+    "subject": "Yu Nighttime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-27T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2aQ==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX9nAAA=",
+    "subject": "Cardona off 3/26-3/29",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-26T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-30T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEjRxg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX_eAAA=",
+    "subject": "Rezk Daytime",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-27T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-28T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFNEi2Dg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAU4Q_5GAAAeHxF5HB9lQKOTx-DOx36TAAU4RX82AAA=",
+    "subject": "Cardona",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-30T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-31T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  }
+]

@@ -1,10 +1,9 @@
 """
-Outlook Calendar Reader — extracted from CalendarApp v1 ms365_sync.py
+Outlook Calendar Client — extracted from CalendarApp v1 ms365_sync.py
 
-Read-only Graph API client for fetching Outlook calendar events.
+Graph API client for fetching Outlook calendar events (personal + Group calendars).
 Used by the Compare View to display Outlook events alongside PerfectServe data.
-
-No write/push/sync operations — this is strictly read-only.
+Group calendar support for Teams 1 & 4 (M365 Group calendars).
 """
 
 import os
@@ -31,6 +30,8 @@ except ImportError:
 SCOPES = [
     "User.Read",
     "Calendars.Read",
+    "Group.ReadWrite.All",
+    "GroupMember.Read.All",
 ]
 
 _CACHE_FILENAME = "msal_token_cache.bin"
@@ -249,6 +250,92 @@ class OutlookCalendarReader:
                 resp = requests.get(next_url, headers=headers, timeout=10)
             except Exception as exc:
                 return [], f"Failed to fetch events: {exc}"
+            if resp.status_code != 200:
+                return [], f"Graph API error: {resp.status_code} - {resp.text[:200]}"
+            payload = resp.json()
+            events.extend(payload.get("value", []))
+            next_url = payload.get("@odata.nextLink")
+
+        return events, None
+
+    def list_groups(self) -> List[dict]:
+        """
+        List M365 Groups the user is a member of.
+        Returns list of {"id": str, "name": str, "description": str|None}.
+        """
+        if not self.enabled:
+            return []
+        token = self._acquire_access_token()
+        if not token:
+            return []
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        }
+        try:
+            resp = requests.get(
+                "https://graph.microsoft.com/v1.0/me/memberOf/microsoft.graph.group"
+                "?$select=id,displayName,description,groupTypes",
+                headers=headers,
+                timeout=10,
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                return [
+                    {
+                        "id": item.get("id"),
+                        "name": item.get("displayName"),
+                        "description": item.get("description"),
+                    }
+                    for item in data.get("value", [])
+                ]
+            return []
+        except Exception:
+            return []
+
+    def list_group_calendar_events(
+        self,
+        *,
+        group_id: str,
+        range_start: datetime,
+        range_end: datetime,
+    ) -> tuple[List[dict], Optional[str]]:
+        """
+        Fetch events from an M365 Group calendar within a date range.
+        Used for Teams 1 & 4 which use Group calendars.
+        Returns (events_list, error_string_or_None).
+        """
+        if not self.enabled or not self.available:
+            return [], "Outlook reader not available."
+
+        token = self._acquire_access_token()
+        if not token:
+            return [], "No access token available."
+
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+            "Prefer": 'outlook.timezone="America/Chicago"',
+        }
+        start_iso = range_start.isoformat()
+        end_iso = range_end.isoformat()
+        events_url = (
+            f"https://graph.microsoft.com/v1.0/groups/{group_id}/calendar/events"
+            f"?$select=id,subject,start,end,location,body"
+            f"&$filter=start/dateTime ge '{start_iso}' and start/dateTime lt '{end_iso}'"
+            f"&$orderby=start/dateTime"
+        )
+
+        events: List[dict] = []
+        next_url: Optional[str] = events_url
+        max_pages = 10
+
+        while next_url and max_pages > 0:
+            max_pages -= 1
+            try:
+                resp = requests.get(next_url, headers=headers, timeout=10)
+            except Exception as exc:
+                return [], f"Failed to fetch group events: {exc}"
             if resp.status_code != 200:
                 return [], f"Graph API error: {resp.status_code} - {resp.text[:200]}"
             payload = resp.json()

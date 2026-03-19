@@ -1,0 +1,98 @@
+[
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFRPJrig==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAQ0_SqmAAAeHxF5HB9lQKOTx-DOx36TAAURhOsrAAA=",
+    "subject": "Venkatesh Off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-09T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-14T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFc9f7dw==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAQ0_SqmAAAeHxF5HB9lQKOTx-DOx36TAASKrJ2LAAA=",
+    "subject": "Carlson Off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-16T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-21T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFdQ3hkg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAQ0_SqmAAAeHxF5HB9lQKOTx-DOx36TAASKrJ2MAAA=",
+    "subject": "Rowbatham",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-20T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  },
+  {
+    "@odata.etag": "W/\"Hh8ReRwfZUCjk8fwzsd+kwAFdQ3hgg==\"",
+    "id": "AAMkADY2YWYxNDM2LWNjYzMtNDc5Ni1iYTIzLTlmY2MyZmMyMWU5MQBGAAAAAAAGx3jhwlgYTpMgj7u2X3h4BwAeHxF5HB9lQKOTx-DOx36TAAQ0_SqmAAAeHxF5HB9lQKOTx-DOx36TAAVNqbzIAAA=",
+    "subject": "Asfar Off",
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "start": {
+      "dateTime": "2026-03-19T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-03-21T00:00:00.0000000",
+      "timeZone": "America/Chicago"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    }
+  }
+]

@@ -4,8 +4,8 @@
     {
       "id": "team-1",
       "doctor_ids": [
-        "atkinson",
         "chanda",
+        "karam",
         "leavitt",
         "mundra"
       ],
@@ -26,12 +26,6 @@
             "choma",
             "molini"
           ]
-        },
-        {
-          "facility_id": "st-thomas-west",
-          "doctor_ids": [
-            "karam"
-          ]
         }
       ]
     },
@@ -40,7 +34,7 @@
       "doctor_ids": [
         "coleman",
         "cox",
-        "karam",
+        "linfert",
         "soni"
       ],
       "facilities": [
@@ -59,9 +53,25 @@
       ],
       "extra_assignment_doctors": [
         {
+          "facility_id": "cmc",
+          "doctor_ids": [
+            "karam",
+            "linfert"
+          ]
+        },
+        {
           "facility_id": "southern-hills",
           "doctor_ids": [
-            "soni"
+            "soni",
+            "karam",
+            "linfert"
+          ]
+        },
+        {
+          "facility_id": "select-specialty",
+          "doctor_ids": [
+            "karam",
+            "linfert"
           ]
         }
       ]
@@ -152,7 +162,7 @@
     {
       "id": "team-6",
       "doctor_ids": [
-        "chaney",
+        "atkinson",
         "green",
         "omitowoju",
         "studdard"
@@ -167,14 +177,7 @@
           "display_name": "Stonecrest"
         }
       ],
-      "extra_assignment_doctors": [
-        {
-          "facility_id": "stonecrest-trustpoint",
-          "doctor_ids": [
-            "atkinson"
-          ]
-        }
-      ]
+      "extra_assignment_doctors": []
     },
     {
       "id": "team-7",

@@ -26,14 +26,15 @@
     { "id": "soni", "last_name": "Soni", "full_name": "Soni", "active": true },
     { "id": "yu", "last_name": "Yu", "full_name": "Yu", "active": true },
 
-    { "id": "chaney", "last_name": "Chaney", "full_name": "Chaney", "active": true },
+    { "id": "chaney", "last_name": "Chaney", "full_name": "Chaney", "active": false },
     { "id": "green", "last_name": "Green", "full_name": "Green", "active": true },
     { "id": "omitowoju", "last_name": "Omitowoju", "full_name": "Omitowoju", "active": true },
     { "id": "studdard", "last_name": "Studdard", "full_name": "Studdard", "active": true },
 
     { "id": "hughes", "last_name": "Hughes", "full_name": "Hughes", "active": true },
     { "id": "jalota", "last_name": "Jalota", "full_name": "Jalota", "active": true },
-    { "id": "katragadda", "last_name": "Katragadda", "full_name": "Katragadda", "active": true }
+    { "id": "katragadda", "last_name": "Katragadda", "full_name": "Katragadda", "active": true },
+    { "id": "linfert", "last_name": "Linfert", "full_name": "Linfert", "active": true }
   ],
   "teams": [
     { "id": "team-1", "display_name": "Team 1", "active": true },
