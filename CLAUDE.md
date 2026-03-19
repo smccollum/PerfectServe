@@ -94,6 +94,22 @@ Teams have different Friday split times (defined in `models.py`):
 
 ---
 
+## Domain Model (Why the data looks the way it does)
+
+Understanding these concepts prevents misinterpreting scraped data:
+
+**Master schedule = team-level truth.** Night and weekend coverage is defined at the team level. A facility view is a *slice* of that truth — secondary facilities inherit the team's night coverage unless there's an explicit exception.
+
+**Day call is separate and facility-specific.** Extra/cross-team doctors (e.g., Team 4's Choma covering Sumner day for Team 1) are annotations for day coverage, not changes to core team truth.
+
+**Example — Team 1 / Sumner Regional:** St. Thomas West = full Team 1 all-day. But Sumner is a *mixed view*: weekday day is Team 4 doctors, night follows Team 1 master. If scraped data shows Team 4 names at a Team 1 facility during the day, that's correct, not an error.
+
+**Team 1 is modeled as all-day every day** (no day/night split on the master schedule). Other teams follow the standard day/night + weekend pattern.
+
+**Team 6 has no online calendar** — they use manual Excel/Word. They may need Outlook push (see `outlook_sync/`).
+
+---
+
 ## Planned Features
 
 ### 1. PerfectServe → PDF (Primary Engine) — Working
