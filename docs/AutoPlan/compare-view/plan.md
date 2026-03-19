@@ -134,13 +134,23 @@ def fetch_team_events(self, team_id, year, month, calendar_config):
 
 **Files to change:** `outlook_client.py`
 **Files to create:** `calendar_config.json` (gitignored)
-**Blocked on:** User providing remaining schedule IDs (Teams 3, 5 confirmed; 1, 4 confirmed; 2 confirmed; 6, 7 = null)
+**Status:** Outlook calendar IDs confirmed for Teams 1-5 (see `domain_calendar_types.md` memory). Teams 6-7 = null (no Outlook calendar).
 
 ### 1D. Scraper Team ID Mapping
 
-Currently `scraper/scrape-shifts.js` only maps Team1 and Team6 in the `TEAM_IDS` object (line 8-11). Need all 7.
+Currently `scraper/scrape-shifts.js` only maps Team1 and Team6 in the `TEAM_IDS` object (line 8-11). Need all 22 schedule IDs.
 
-**Blocked on:** User providing PS schedule IDs for Teams 2, 3, 4, 5, 7.
+**Status: RESOLVED.** All 22 PS schedule IDs captured in `ps_schedule_config.json`. Update `scrape-shifts.js` to read from this config instead of hardcoded mapping.
+
+### 1E. Settings GUI — NOT NEEDED
+
+Since v2 just displays what PS gives us, there's no need for doctor/team/facility management screens. If PS adds a new doctor or changes a relationship, the scraped data reflects it automatically. The only config files are:
+- `ps_schedule_config.json` — PS schedule IDs (rarely changes, edit JSON directly)
+- `calendar_config.json` — Outlook calendar IDs (rarely changes)
+- `facility_notes.json` — editable in the Compare View UI
+- `vacation_notes.json` — editable in the Compare View UI
+
+The v1 CalendarApp has ~3,000 lines of settings GUI in `editor.py` (lines 424-3777) that can be referenced if management screens are ever needed. For now, skip it.
 
 ---
 
@@ -215,16 +225,32 @@ Build as a single HTML file (like the playground) that reads data from JSON.
 ## Execution Order
 
 ```
-1A. PDF notes sections ← quickest win, 30 min
-1B. Follow resolution  ← enables sub-calendar PDFs
-1C. Calendar config    ← enables Compare View data loading
-1D. Scraper IDs        ← blocked on user input
-2A. Compare View core  ← the main deliverable
-2B. Notes input        ← feeds into PDF generation
-2C. Actions            ← ties it together
-3.  Contacts           ← independent, high value
-4.  Version tracking   ← nice to have
-5.  Outlook push       ← parked
+1A. PDF notes sections   ← quickest win, ~30 min
+1B. Follow resolution    ← enables sub-calendar PDFs
+1C. Calendar config      ← enables Compare View data loading
+1D. Scraper ID mapping   ← RESOLVED (ps_schedule_config.json), just wire into scrape-shifts.js
+1E. Settings GUI         ← NOT NEEDED for v2
+2A. Compare View core    ← the main deliverable
+2B. Notes input          ← feeds into PDF generation
+2C. Actions              ← ties it together
+3.  Contacts             ← independent, high value
+4.  Version tracking     ← nice to have
+5.  Outlook push         ← parked
 ```
 
-Start with **1A** (PDF notes) — it's a quick win that proves the notes pipeline works before building the full Compare View.
+**No open blockers.** Start with **1A** (PDF notes) — it's a quick win that proves the notes pipeline works before building the full Compare View.
+
+---
+
+## Key Reference Files
+
+| File | Purpose |
+|---|---|
+| `ps_schedule_config.json` | All 22 PS schedule IDs, master/follow relationships, active flags |
+| `calendar_config.json` | Outlook calendar IDs per team (gitignored) |
+| `docs/samplejson/ps-*.json` | Real PS API responses for all teams/facilities (March 2026) |
+| `docs/sampleoutlookcalendars/*_graph.json` | Real Outlook events for Teams 1-5 (March 2026) |
+| `docs/samplepdfs/*.pdf` | Real production PDFs for all 18 facilities (March 2026) |
+| `docs/design/compare-view-v3.html` | Approved Compare View layout (interactive playground) |
+| `CLAUDE.md` | Project context + deep context reference table |
+| `.claude/review-profile.md` | Review invariants and role→model mapping |
