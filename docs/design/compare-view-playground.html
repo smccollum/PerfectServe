@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PerfectServe Pipeline — Compare View</title>
+<style>
+  :root {
+    --bg: #F4F5F7;
+    --surface: #FFFFFF;
+    --surface-hover: #F9FAFB;
+    --border: #E2E4E9;
+    --border-light: #EDEEF1;
+    --text: #1A1D23;
+    --text-secondary: #6B7280;
+    --text-tertiary: #9CA3AF;
+    --accent: #2563EB;
+    --accent-hover: #1D4ED8;
+    --accent-light: #EFF6FF;
+    --nav-bg: #1E293B;
+    --nav-text: #CBD5E1;
+    --nav-active: #FFFFFF;
+    --match: #059669;
+    --mismatch: #D97706;
+    --vacation: #DC2626;
+    --instruction: #2563EB;
+    --weekend-bg: #F8FAFC;
+    --today-bg: #EFF6FF;
+    --today-border: #2563EB;
+    --tag-day-bg: #DBEAFE; --tag-day: #1D4ED8;
+    --tag-night-bg: #EDE9FE; --tag-night: #6D28D9;
+    --tag-weekend-bg: #D1FAE5; --tag-weekend: #047857;
+    --tag-allday-bg: #D1FAE5; --tag-allday: #047857;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+    --radius: 8px;
+    --radius-sm: 4px;
+  }
+
+  [data-theme="dark"] {
+    --bg: #0F1117;
+    --surface: #181A20;
+    --surface-hover: #1E2028;
+    --border: #2A2D36;
+    --border-light: #22252E;
+    --text: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --text-tertiary: #6B7280;
+    --accent-light: #1E293B;
+    --weekend-bg: #13151B;
+    --today-bg: #172036;
+    --nav-bg: #0B0D12;
+    --tag-day-bg: #1E3A5F; --tag-day: #93C5FD;
+    --tag-night-bg: #2E1065; --tag-night: #C4B5FD;
+    --tag-weekend-bg: #064E3B; --tag-weekend: #6EE7B7;
+    --tag-allday-bg: #064E3B; --tag-allday: #6EE7B7;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ─── Top Nav ─── */
+  .topnav {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .topnav-left { display: flex; align-items: center; gap: 24px; }
+  .topnav-brand { font-size: 14px; font-weight: 700; color: var(--nav-active); display: flex; align-items: center; gap: 8px; }
+  .topnav-brand .dot-grid { font-size: 16px; opacity: 0.5; }
+  .topnav-tabs { display: flex; gap: 4px; }
+  .topnav-tab {
+    font-size: 13px; font-weight: 500; padding: 12px 14px;
+    color: var(--nav-text); text-decoration: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .topnav-tab:hover { color: var(--nav-active); }
+  .topnav-tab.active { color: var(--nav-active); border-bottom-color: var(--accent); }
+  .topnav-right { display: flex; align-items: center; gap: 12px; }
+  .nav-btn {
+    font-family: inherit; font-size: 12px; font-weight: 500;
+    padding: 6px 12px; border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,0.15); background: transparent;
+    color: var(--nav-text); cursor: pointer; display: flex; align-items: center; gap: 5px;
+    transition: all 0.15s;
+  }
+  .nav-btn:hover { background: rgba(255,255,255,0.08); color: var(--nav-active); }
+  .nav-icon { font-size: 14px; }
+
+  /* ─── Toolbar ─── */
+  .toolbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .toolbar-left { display: flex; align-items: center; gap: 12px; }
+  .toolbar-right { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-secondary); }
+  .toolbar-right strong { color: var(--text); font-weight: 600; }
+
+  select {
+    font-family: inherit; font-size: 13px; padding: 5px 10px;
+    border-radius: var(--radius-sm); border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); cursor: pointer;
+  }
+  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .month-nav { display: flex; align-items: center; gap: 8px; }
+  .month-nav button {
+    font-family: inherit; font-size: 16px; width: 28px; height: 28px;
+    border-radius: var(--radius-sm); border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .month-nav button:hover { background: var(--surface-hover); }
+  .month-label { font-size: 14px; font-weight: 600; min-width: 120px; text-align: center; }
+
+  /* ─── Main Layout ─── */
+  .main {
+    flex: 1; display: flex; overflow: hidden;
+  }
+
+  /* ─── Left Panel: Outlook List ─── */
+  .left-panel {
+    width: 280px; min-width: 240px; max-width: 340px;
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    background: var(--surface);
+  }
+  .panel-header {
+    padding: 12px 16px 8px;
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border-light);
+    flex-shrink: 0;
+  }
+  .panel-subheader {
+    padding: 4px 16px 10px;
+    font-size: 16px; font-weight: 600; color: var(--text);
+    flex-shrink: 0;
+  }
+
+  .event-list {
+    flex: 1; overflow-y: auto; padding: 0;
+  }
+  .event-day {
+    display: flex; align-items: baseline; gap: 0;
+    padding: 6px 16px; border-bottom: 1px solid var(--border-light);
+    min-height: 36px; cursor: pointer; transition: background 0.1s;
+  }
+  .event-day:hover { background: var(--surface-hover); }
+  .event-day.weekend { background: var(--weekend-bg); }
+  .event-day.today { background: var(--today-bg); }
+  .event-day-label {
+    width: 44px; flex-shrink: 0;
+    font-size: 11px; color: var(--text-tertiary); font-weight: 500;
+    line-height: 1.4; padding-top: 1px;
+  }
+  .event-day-label .d-num { font-size: 15px; font-weight: 600; color: var(--text-secondary); display: block; line-height: 1; }
+  .event-day.today .event-day-label .d-num { color: var(--accent); }
+  .event-day-label .d-name { font-size: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .event-day-content { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+  .evt {
+    font-size: 12.5px; font-weight: 500; line-height: 1.4;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .evt.vacation { color: var(--vacation); font-weight: 400; font-style: italic; font-size: 11.5px; }
+  .evt.instruction { color: var(--instruction); font-weight: 400; font-size: 11px; }
+  .evt.empty { color: var(--text-tertiary); font-weight: 400; }
+
+  /* Vacation notes under list */
+  .vacation-section {
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    padding: 10px 16px;
+  }
+  .vacation-section h4 {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: 6px;
+  }
+  .vac-line { font-size: 11.5px; color: var(--vacation); padding: 1px 0; }
+  .vacation-section textarea {
+    width: 100%; min-height: 40px; margin-top: 4px;
+    font-family: inherit; font-size: 11.5px; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 6px 8px;
+    background: var(--bg); color: var(--text); resize: vertical;
+  }
+  .vacation-section textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+  /* ─── Right Panel: Calendar Grid ─── */
+  .right-panel {
+    flex: 1; display: flex; flex-direction: column; overflow: hidden;
+  }
+
+  .cal-grid-container {
+    flex: 1; padding: 12px 16px 0; overflow-y: auto;
+  }
+
+  .cal-header-row {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    text-align: center; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--text-tertiary); padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cal-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    border-left: 1px solid var(--border);
+  }
+
+  .cal-cell {
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    min-height: 90px; padding: 4px 5px;
+    font-size: 11.5px; cursor: pointer;
+    transition: background 0.1s;
+    position: relative;
+  }
+  .cal-cell:hover { background: var(--surface-hover); }
+  .cal-cell.weekend { background: var(--weekend-bg); }
+  .cal-cell.today { background: var(--today-bg); }
+  .cal-cell.empty { background: var(--bg); cursor: default; }
+  .cal-cell.empty:hover { background: var(--bg); }
+
+  .cal-day-num {
+    font-size: 13px; font-weight: 600; color: var(--text-secondary);
+    margin-bottom: 3px;
+  }
+  .cal-cell.today .cal-day-num {
+    color: var(--accent); background: var(--accent);
+    color: white; width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+  }
+
+  .cal-shift {
+    display: flex; align-items: center; gap: 3px;
+    padding: 2px 0; line-height: 1.3;
+  }
+  .cal-shift-bar {
+    width: 3px; height: 14px; border-radius: 2px; flex-shrink: 0;
+  }
+  .cal-shift-bar.day { background: var(--tag-day); }
+  .cal-shift-bar.night { background: var(--tag-night); }
+  .cal-shift-bar.weekend { background: var(--tag-weekend); }
+  .cal-shift-bar.allday { background: var(--tag-allday); }
+
+  .cal-shift-text {
+    font-size: 11px; font-weight: 500; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .cal-shift-label {
+    font-size: 9px; font-weight: 600; text-transform: uppercase;
+    color: var(--text-tertiary); letter-spacing: 0.02em;
+  }
+
+  /* Notes under calendar */
+  .cal-notes {
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    padding: 10px 16px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .cal-note-section h4 {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: 4px;
+  }
+  .cal-note-line { font-size: 11.5px; padding: 1px 0; color: var(--text); }
+  .cal-notes textarea {
+    width: 100%; min-height: 36px; margin-top: 4px;
+    font-family: inherit; font-size: 11.5px; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 6px 8px;
+    background: var(--bg); color: var(--text); resize: vertical;
+  }
+  .cal-notes textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+  /* ─── Scrollbar ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
+</style>
+</head>
+<body>
+
+<!-- Top Nav -->
+<div class="topnav">
+  <div class="topnav-left">
+    <div class="topnav-brand"><span class="dot-grid">⬡</span> PerfectServe Pipeline</div>
+    <div class="topnav-tabs">
+      <div class="topnav-tab active">Schedules</div>
+      <div class="topnav-tab">Contacts</div>
+      <div class="topnav-tab">Distribution</div>
+    </div>
+  </div>
+  <div class="topnav-right">
+    <button class="nav-btn" onclick="toggleTheme()"><span class="nav-icon">🌓</span></button>
+    <button class="nav-btn"><span class="nav-icon">📋</span> Contacts</button>
+    <button class="nav-btn"><span class="nav-icon">📤</span> Export</button>
+    <button class="nav-btn"><span class="nav-icon">⚙</span></button>
+  </div>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <div class="toolbar-left">
+    <select id="teamSelect"></select>
+    <select id="facilitySelect"></select>
+    <div class="month-nav">
+      <button onclick="changeMonth(-1)">‹</button>
+      <span class="month-label" id="monthLabel">March 2026</span>
+      <button onclick="changeMonth(1)">›</button>
+    </div>
+  </div>
+  <div class="toolbar-right">
+    <span>PDF: <strong id="pdfTs">Mar 15, 3:42 PM</strong></span>
+    <span style="color:var(--border)">|</span>
+    <span>Sent: <strong id="sentTs">Mar 15, 3:45 PM</strong></span>
+  </div>
+</div>
+
+<!-- Main Layout -->
+<div class="main">
+
+  <!-- Left Panel: Outlook Events -->
+  <div class="left-panel">
+    <div class="panel-header">OUTLOOK EVENTS</div>
+    <div class="panel-subheader" id="leftTeamLabel">Team 1</div>
+    <div class="event-list" id="eventList"></div>
+    <div class="vacation-section">
+      <h4>Doctor Vacations</h4>
+      <div id="vacLines"></div>
+      <textarea id="vacInput" placeholder="Enter vacation notes..."></textarea>
+    </div>
+  </div>
+
+  <!-- Right Panel: PS Calendar -->
+  <div class="right-panel">
+    <div class="cal-grid-container">
+      <div class="cal-header-row">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+    <div class="cal-notes">
+      <div class="cal-note-section">
+        <h4>Facility Notes</h4>
+        <div id="facNoteLines"></div>
+        <textarea id="facInput" placeholder="Add facility notes..."></textarea>
+      </div>
+      <div class="cal-note-section">
+        <h4>Contact Info / Distribution</h4>
+        <div id="contactLines"></div>
+        <textarea id="contactInput" placeholder="Add contact info..."></textarea>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ─── Data ───
+const TEAMS = {
+  'team-1': {
+    name: 'Team 1', outlookLabel: 'Team1 Group Calendar',
+    facilities: [{id:'st-thomas-west',name:'St. Thomas West',master:true},{id:'sumner-regional',name:'Sumner Regional'}],
+    doctors: ['Chanda','Karam','Leavitt','Mundra']
+  },
+  'team-2': {
+    name: 'Team 2', outlookLabel: 'CMC POD Call Schedule',
+    facilities: [{id:'cmc',name:'Centennial (CMC)',master:true},{id:'southern-hills',name:'Southern Hills'},{id:'select-specialty',name:'Select Specialty'}],
+    doctors: ['Coleman','Cox','Linfert','Soni']
+  },
+  'team-3': {
+    name: 'Team 3', outlookLabel: '4Call (Rowbatham)',
+    facilities: [{id:'skyline',name:'Skyline',master:true},{id:'hendersonville',name:'Hendersonville'}],
+    doctors: ['Asfar','Carlson','Rowbatham','Venkatesh']
+  },
+  'team-4': {
+    name: 'Team 4', outlookLabel: 'Team4 Group Calendar',
+    facilities: [{id:'st-thomas-midtown',name:'St. Thomas Midtown',master:true},{id:'summit',name:'Summit'},{id:'vwch',name:'VWCH'}],
+    doctors: ['Choma','Khan','McCoy','Molini']
+  },
+  'team-5': {
+    name: 'Team 5', outlookLabel: 'Team 5 (Rezk)',
+    facilities: [{id:'maury-regional',name:'Maury Regional',master:true},{id:'horizon',name:'Horizon'},{id:'williamson-encompass',name:'Williamson/Encompass'}],
+    doctors: ['Cardona','Rezk','Wilbeck','Yu']
+  },
+  'team-6': {
+    name: 'Team 6', outlookLabel: '(No calendar)',
+    facilities: [{id:'st-thomas-rutherford',name:'St. Thomas Rutherford',master:true},{id:'stonecrest-trustpoint',name:'Stonecrest'}],
+    doctors: ['Atkinson','Green','Omitowoju','Studdard']
+  },
+  'team-7': {
+    name: 'Team 7', outlookLabel: '(No calendar)',
+    facilities: [{id:'tennova-clarksville',name:'Tennova Clarksville',master:true},{id:'jsmc',name:'JSMC'},{id:'deaconess',name:'Deaconess'}],
+    doctors: ['Hughes','Jalota','Katragadda']
+  }
+};
+
+const DATA = {
+  'team-1': {
+    outlook: {
+      2:[{n:'Chanda'}],3:[{n:'Karam'}],4:[{n:'Mundra'}],5:[{n:'Leavitt'}],
+      6:[{n:'Chanda'}],7:[{n:'Chanda'}],8:[{n:'Chanda'}],
+      9:[{n:'Karam'}],10:[{n:'Chanda'}],11:[{n:'Leavitt'}],12:[{n:'Chanda'}],
+      13:[{n:'Leavitt'}],14:[{n:'Leavitt'}],15:[{n:'Leavitt'}],
+      16:[{n:'Karam'}],17:[{n:'Mundra'}],18:[{n:'Leavitt'}],19:[{n:'Mundra'}],
+      20:[{n:'Atkinson'}],21:[{n:'Atkinson'}],22:[{n:'Atkinson'}],
+      23:[{n:'Mundra'}],24:[{n:'Karam'}],25:[{n:'Leavitt'}],26:[{n:'Chanda'}],
+      27:[{n:'Mundra'}],28:[{n:'Mundra'}],29:[{n:'Mundra'}],
+      30:[{n:'Leavitt'}],31:[{n:'Mundra'}]
+    },
+    ps: {
+      1:[{n:'Mundra',t:'allday',tm:'all day'}],
+      2:[{n:'Chanda',t:'allday',tm:'all day'}],3:[{n:'Karam',t:'allday',tm:'all day'}],
+      4:[{n:'Mundra',t:'allday',tm:'all day'}],5:[{n:'Leavitt',t:'allday',tm:'all day'}],
+      6:[{n:'Chanda',t:'allday',tm:'all day'}],7:[{n:'Chanda',t:'allday',tm:'all day'}],8:[{n:'Chanda',t:'allday',tm:'all day'}],
+      9:[{n:'Karam',t:'allday',tm:'all day'}],10:[{n:'Chanda',t:'allday',tm:'all day'}],
+      11:[{n:'Leavitt',t:'allday',tm:'all day'}],12:[{n:'Chanda',t:'allday',tm:'all day'}],
+      13:[{n:'Leavitt',t:'allday',tm:'all day'}],14:[{n:'Leavitt',t:'allday',tm:'all day'}],15:[{n:'Leavitt',t:'allday',tm:'all day'}],
+      16:[{n:'Karam',t:'allday',tm:'all day'}],17:[{n:'Mundra',t:'allday',tm:'all day'}],
+      18:[{n:'Leavitt',t:'allday',tm:'all day'}],19:[{n:'Mundra',t:'allday',tm:'all day'}],
+      20:[{n:'Atkinson',t:'allday',tm:'all day'}],21:[{n:'Atkinson',t:'allday',tm:'all day'}],22:[{n:'Atkinson',t:'allday',tm:'all day'}],
+      23:[{n:'Mundra',t:'allday',tm:'all day'}],24:[{n:'Karam',t:'allday',tm:'all day'}],
+      25:[{n:'Leavitt',t:'allday',tm:'all day'}],26:[{n:'Chanda',t:'allday',tm:'all day'}],
+      27:[{n:'Mundra',t:'allday',tm:'all day'}],28:[{n:'Mundra',t:'allday',tm:'all day'}],29:[{n:'Mundra',t:'allday',tm:'all day'}],
+      30:[{n:'Leavitt',t:'allday',tm:'all day'}],31:[{n:'Mundra',t:'allday',tm:'all day'}]
+    },
+    vac: [],
+    facNotes: ['Night call follows Team 1 master','Day call at STW = same as night call'],
+    contacts: ['Calendar owner: Dr. Leavitt','Distribution: Email PDF']
+  },
+  'team-2': {
+    outlook: {
+      5:[{n:'Karam'}],6:[{n:'Coleman'}],
+      7:[{n:'Cox Off',c:'v'},{n:'Soni Off – S.Hills: Coleman 3/9-11, Karam 3/12-15',c:'i'}],
+      8:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'}],
+      9:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Soni'}],
+      10:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Karam'}],
+      11:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Coleman'}],
+      12:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Karam'}],
+      13:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Linfert'}],
+      14:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Linfert'}],
+      15:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Linfert'}],
+      16:[{n:'CMC: Cox M-W Soni, Th-F Karam',c:'i'},{n:'Coleman'}],
+      17:[{n:'Soni'}],18:[{n:'Karam'}],19:[{n:'Linfert'}],
+      20:[{n:'Coleman'}],21:[{n:'Coleman'}],22:[{n:'Coleman'}],
+      23:[{n:'Soni'}],24:[{n:'Cox'}],25:[{n:'Karam'}],
+      26:[{n:'Linfert'}],27:[{n:'Coleman'}],
+      28:[{n:'Karam on Vacation',c:'v'},{n:'Coleman'}],
+      29:[{n:'Karam on Vacation',c:'v'},{n:'Coleman'}],
+      30:[{n:'Karam on Vacation',c:'v'},{n:'Soni'}],
+      31:[{n:'Karam on Vacation',c:'v'},{n:'Cox'}]
+    },
+    ps: {
+      1:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Soni',t:'night',tm:'2P–7A'}],
+      2:[{n:'Soni',t:'day',tm:'7A–2P'},{n:'Cox',t:'night',tm:'2P–7A'}],
+      3:[{n:'Cox',t:'day',tm:'7A–2P'},{n:'Coleman',t:'night',tm:'2P–7A'}],
+      4:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Karam',t:'night',tm:'2P–7A'}],
+      5:[{n:'Karam',t:'day',tm:'7A–2P'},{n:'Karam',t:'night',tm:'2P–7A'}],
+      6:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Coleman',t:'weekend',tm:'2P–7A'}],
+      7:[{n:'Coleman',t:'weekend',tm:'all day'}],8:[{n:'Coleman',t:'weekend',tm:'all day'}],
+      9:[{n:'Soni',t:'day',tm:'7A–2P'},{n:'Soni',t:'night',tm:'2P–7A'}],
+      10:[{n:'Karam',t:'day',tm:'7A–2P'},{n:'Karam',t:'night',tm:'2P–7A'}],
+      11:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Coleman',t:'night',tm:'2P–7A'}],
+      12:[{n:'Karam',t:'day',tm:'7A–2P'},{n:'Karam',t:'night',tm:'2P–7A'}],
+      13:[{n:'Linfert',t:'day',tm:'7A–2P'},{n:'Linfert',t:'weekend',tm:'2P–7A'}],
+      14:[{n:'Linfert',t:'weekend',tm:'all day'}],15:[{n:'Linfert',t:'weekend',tm:'all day'}],
+      16:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Coleman',t:'night',tm:'2P–7A'}],
+      17:[{n:'Soni',t:'day',tm:'7A–2P'},{n:'Soni',t:'night',tm:'2P–7A'}],
+      18:[{n:'Karam',t:'day',tm:'7A–2P'},{n:'Karam',t:'night',tm:'2P–7A'}],
+      19:[{n:'Linfert',t:'day',tm:'7A–2P'},{n:'Linfert',t:'night',tm:'2P–7A'}],
+      20:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Coleman',t:'weekend',tm:'2P–7A'}],
+      21:[{n:'Coleman',t:'weekend',tm:'all day'}],22:[{n:'Coleman',t:'weekend',tm:'all day'}],
+      23:[{n:'Soni',t:'day',tm:'7A–2P'},{n:'Soni',t:'night',tm:'2P–7A'}],
+      24:[{n:'Cox',t:'day',tm:'7A–2P'},{n:'Cox',t:'night',tm:'2P–7A'}],
+      25:[{n:'Karam',t:'day',tm:'7A–2P'},{n:'Karam',t:'night',tm:'2P–7A'}],
+      26:[{n:'Linfert',t:'day',tm:'7A–2P'},{n:'Linfert',t:'night',tm:'2P–7A'}],
+      27:[{n:'Coleman',t:'day',tm:'7A–2P'},{n:'Coleman',t:'weekend',tm:'2P–7A'}],
+      28:[{n:'Coleman',t:'weekend',tm:'all day'}],29:[{n:'Coleman',t:'weekend',tm:'all day'}],
+      30:[{n:'Soni',t:'day',tm:'7A–2P'},{n:'Soni',t:'night',tm:'2P–7A'}],
+      31:[{n:'Cox',t:'day',tm:'7A–2P'},{n:'Cox',t:'night',tm:'2P–7A'}]
+    },
+    vac: ['Cox off: Mar 7–15','Soni off: Mar 7–15','Karam vacation: Mar 28 – Apr 12'],
+    facNotes: ['Friday weekend starts at 2PM','Calendar managed by Dr. Soni'],
+    contacts: ['Calendar owner: Dr. Soni','Select Specialty: Coleman default','S.Hills day: Soni default']
+  },
+  'team-5': {
+    outlook: {
+      1:[{n:'Yu'}],2:[{n:'Cardona'}],3:[{n:'Cardona'}],4:[{n:'Wilbeck'}],5:[{n:'Rezk'}],
+      6:[{n:'Rezk'}],7:[{n:'Rezk'}],8:[{n:'Rezk'}],
+      9:[{n:'Rezk'}],10:[{n:'Rezk'}],11:[{n:'Wilbeck'}],12:[{n:'Rezk'}],
+      13:[{n:'Wilbeck'}],14:[{n:'Wilbeck'}],15:[{n:'Wilbeck'}],
+      16:[{n:'Cardona'}],17:[{n:'Yu'}],
+      18:[{n:'Rezk off',c:'v'},{n:'Wilbeck'}],
+      19:[{n:'Rezk off',c:'v'},{n:'Yu'}],
+      20:[{n:'Rezk off',c:'v'},{n:'Cardona'}],
+      21:[{n:'Cardona'}],22:[{n:'Cardona'}],
+      23:[{n:'Rezk'}],24:[{n:'Cardona'}],25:[{n:'Wilbeck'}],26:[{n:'Yu'}],
+      27:[{n:'Rezk'}],28:[{n:'Rezk'}],29:[{n:'Rezk'}],
+      30:[{n:'Cardona'}],31:[{n:'Cardona'}]
+    },
+    ps: {
+      1:[{n:'Yu',t:'allday',tm:'all day'}],
+      2:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Rezk',t:'night',tm:'3P–7A'}],
+      3:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Wilbeck',t:'night',tm:'3P–7A'}],
+      4:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Yu',t:'night',tm:'3P–7A'}],
+      5:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Cardona',t:'night',tm:'3P–7A'}],
+      6:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Rezk',t:'weekend',tm:'3P–7A'}],
+      7:[{n:'Rezk',t:'weekend',tm:'all day'}],8:[{n:'Rezk',t:'weekend',tm:'all day'}],
+      9:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Rezk',t:'night',tm:'3P–7A'}],
+      10:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Rezk',t:'night',tm:'3P–7A'}],
+      11:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Wilbeck',t:'night',tm:'3P–7A'}],
+      12:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Rezk',t:'night',tm:'3P–7A'}],
+      13:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Wilbeck',t:'weekend',tm:'3P–7A'}],
+      14:[{n:'Wilbeck',t:'weekend',tm:'all day'}],15:[{n:'Wilbeck',t:'weekend',tm:'all day'}],
+      16:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Cardona',t:'night',tm:'3P–7A'}],
+      17:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Yu',t:'night',tm:'3P–7A'}],
+      18:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Wilbeck',t:'night',tm:'3P–7A'}],
+      19:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Yu',t:'night',tm:'3P–7A'}],
+      20:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Cardona',t:'weekend',tm:'3P–7A'}],
+      21:[{n:'Cardona',t:'weekend',tm:'all day'}],22:[{n:'Cardona',t:'weekend',tm:'all day'}],
+      23:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Rezk',t:'night',tm:'3P–7A'}],
+      24:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Cardona',t:'night',tm:'3P–7A'}],
+      25:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Wilbeck',t:'night',tm:'3P–7A'}],
+      26:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Yu',t:'night',tm:'3P–7A'}],
+      27:[{n:'Rezk',t:'day',tm:'7A–3P'},{n:'Rezk',t:'weekend',tm:'3P–7A'}],
+      28:[{n:'Rezk',t:'weekend',tm:'all day'}],29:[{n:'Rezk',t:'weekend',tm:'all day'}],
+      30:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Cardona',t:'night',tm:'3P–7A'}],
+      31:[{n:'Cardona',t:'day',tm:'7A–3P'},{n:'Yu',t:'night',tm:'3P–7A'}]
+    },
+    vac: ['Yu off: Mar 7–15','Rezk off: Mar 18–20','Cardona off: Mar 26–29'],
+    facNotes: ['Maury Regional is the driver calendar','Friday weekend starts at 3PM'],
+    contacts: ['Calendar owner: Dr. Rezk','Horizon day: Yu (Atkinson backup)','Williamson day: Wilbeck (Team 2)']
+  }
+};
+
+const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const MONTHS = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// ─── State ───
+const state = { team:'team-1', facility:'st-thomas-west', year:2026, month:3, theme:'light' };
+
+// ─── Render ───
+function render() {
+  const team = TEAMS[state.team] || TEAMS['team-1'];
+  const data = DATA[state.team] || DATA['team-1'];
+  const dim = daysInMonth(state.year, state.month);
+  const startDow = new Date(state.year, state.month-1, 1).getDay();
+
+  // Dropdowns
+  const ts = document.getElementById('teamSelect');
+  ts.innerHTML = Object.entries(TEAMS).map(([k,v]) =>
+    `<option value="${k}" ${k===state.team?'selected':''}>${v.name}</option>`).join('');
+  const fs = document.getElementById('facilitySelect');
+  fs.innerHTML = team.facilities.map(f =>
+    `<option value="${f.id}" ${f.id===state.facility?'selected':''}>${f.name}${f.master?' ●':''}</option>`).join('');
+
+  document.getElementById('monthLabel').textContent = `${MONTHS[state.month]} ${state.year}`;
+  document.getElementById('leftTeamLabel').textContent = `${team.name} — ${team.outlookLabel}`;
+
+  // Left panel: event list
+  let listHtml = '';
+  for (let d = 1; d <= dim; d++) {
+    const dow = new Date(state.year, state.month-1, d).getDay();
+    const wk = dow === 0 || dow === 6;
+    const evts = (data.outlook && data.outlook[d]) || [];
+    listHtml += `<div class="event-day ${wk?'weekend':''}">`;
+    listHtml += `<div class="event-day-label"><span class="d-num">${d}</span><span class="d-name">${DOW[dow]}</span></div>`;
+    listHtml += `<div class="event-day-content">`;
+    if (evts.length === 0) {
+      listHtml += `<span class="evt empty">—</span>`;
+    } else {
+      for (const e of evts) {
+        const cls = e.c === 'v' ? 'vacation' : e.c === 'i' ? 'instruction' : '';
+        listHtml += `<span class="evt ${cls}">${e.n}</span>`;
+      }
+    }
+    listHtml += `</div></div>`;
+  }
+  document.getElementById('eventList').innerHTML = listHtml;
+
+  // Right panel: calendar grid
+  let gridHtml = '';
+  // Leading empties
+  for (let i = 0; i < startDow; i++) gridHtml += `<div class="cal-cell empty"></div>`;
+  for (let d = 1; d <= dim; d++) {
+    const dow = new Date(state.year, state.month-1, d).getDay();
+    const wk = dow === 0 || dow === 6;
+    const shifts = (data.ps && data.ps[d]) || [];
+    gridHtml += `<div class="cal-cell ${wk?'weekend':''}">`;
+    gridHtml += `<div class="cal-day-num">${d}</div>`;
+    for (const s of shifts) {
+      gridHtml += `<div class="cal-shift">`;
+      gridHtml += `<div class="cal-shift-bar ${s.t}"></div>`;
+      gridHtml += `<span class="cal-shift-text">${s.n}</span>`;
+      gridHtml += `<span class="cal-shift-label">${s.tm}</span>`;
+      gridHtml += `</div>`;
+    }
+    gridHtml += `</div>`;
+  }
+  // Trailing empties
+  const totalCells = startDow + dim;
+  const trailing = (7 - (totalCells % 7)) % 7;
+  for (let i = 0; i < trailing; i++) gridHtml += `<div class="cal-cell empty"></div>`;
+  document.getElementById('calGrid').innerHTML = gridHtml;
+
+  // Notes
+  document.getElementById('vacLines').innerHTML = (data.vac||[]).map(v => `<div class="vac-line">${v}</div>`).join('') || '<div style="font-size:11px;color:var(--text-tertiary)">No vacation data</div>';
+  document.getElementById('facNoteLines').innerHTML = (data.facNotes||[]).map(n => `<div class="cal-note-line">${n}</div>`).join('');
+  document.getElementById('contactLines').innerHTML = (data.contacts||[]).map(n => `<div class="cal-note-line">${n}</div>`).join('');
+}
+
+function daysInMonth(y,m) { return new Date(y,m,0).getDate(); }
+
+function changeMonth(delta) {
+  state.month += delta;
+  if (state.month > 12) { state.month = 1; state.year++; }
+  if (state.month < 1) { state.month = 12; state.year--; }
+  render();
+}
+
+function toggleTheme() {
+  state.theme = state.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', state.theme);
+}
+
+document.getElementById('teamSelect').addEventListener('change', e => {
+  state.team = e.target.value;
+  const t = TEAMS[state.team];
+  if (t) state.facility = t.facilities[0].id;
+  render();
+});
+document.getElementById('facilitySelect').addEventListener('change', e => { state.facility = e.target.value; render(); });
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PerfectServe Pipeline — Compare View v3</title>
+<style>
+  :root {
+    --bg: #F4F5F7; --surface: #FFF; --surface-hover: #F9FAFB;
+    --border: #E2E4E9; --border-light: #EDEEF1;
+    --text: #1A1D23; --text-sec: #6B7280; --text-tri: #9CA3AF;
+    --accent: #2563EB; --accent-light: #EFF6FF;
+    --nav-bg: #1E293B; --nav-text: #CBD5E1; --nav-active: #FFF;
+    --vacation: #DC2626; --instruction: #2563EB;
+    --weekend-bg: #F8FAFC; --today-bg: #EFF6FF;
+    --tag-day: #1D4ED8; --tag-day-bg: #DBEAFE;
+    --tag-night: #6D28D9; --tag-night-bg: #EDE9FE;
+    --tag-wknd: #047857; --tag-wknd-bg: #D1FAE5;
+    --tag-allday: #047857; --tag-allday-bg: #D1FAE5;
+    --tag-exc: #B45309; --tag-exc-bg: #FEF3C7;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06); --radius: 6px;
+  }
+  [data-theme="dark"] {
+    --bg: #0F1117; --surface: #181A20; --surface-hover: #1E2028;
+    --border: #2A2D36; --border-light: #22252E;
+    --text: #E5E7EB; --text-sec: #9CA3AF; --text-tri: #6B7280;
+    --accent-light: #1E293B; --weekend-bg: #13151B; --today-bg: #172036;
+    --nav-bg: #0B0D12;
+    --tag-day: #93C5FD; --tag-day-bg: #1E3A5F;
+    --tag-night: #C4B5FD; --tag-night-bg: #2E1065;
+    --tag-wknd: #6EE7B7; --tag-wknd-bg: #064E3B;
+    --tag-allday: #6EE7B7; --tag-allday-bg: #064E3B;
+    --tag-exc: #FCD34D; --tag-exc-bg: #451A03;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.4;-webkit-font-smoothing:antialiased;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+  /* Nav */
+  .nav{background:var(--nav-bg);color:var(--nav-text);display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;flex-shrink:0}
+  .nav-left{display:flex;align-items:center;gap:20px}
+  .nav-brand{font-size:13px;font-weight:700;color:var(--nav-active)}
+  .nav-tabs{display:flex;gap:2px}
+  .nav-tab{font-size:12px;font-weight:500;padding:10px 12px;color:var(--nav-text);cursor:pointer;border-bottom:2px solid transparent}
+  .nav-tab:hover{color:var(--nav-active)}
+  .nav-tab.active{color:var(--nav-active);border-bottom-color:var(--accent)}
+  .nav-right{display:flex;gap:8px}
+  .nbtn{font-family:inherit;font-size:11px;font-weight:500;padding:5px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.15);background:0;color:var(--nav-text);cursor:pointer;display:flex;align-items:center;gap:4px}
+  .nbtn:hover{background:rgba(255,255,255,.08);color:var(--nav-active)}
+
+  /* Toolbar */
+  .toolbar{background:var(--surface);border-bottom:1px solid var(--border);padding:6px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+  .tl{display:flex;align-items:center;gap:10px}
+  .tr{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--text-sec)}
+  .tr strong{color:var(--text);font-weight:600}
+  select{font-family:inherit;font-size:12px;padding:4px 8px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}
+  .mnav{display:flex;align-items:center;gap:6px}
+  .mnav button{font-size:14px;width:24px;height:24px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .mnav button:hover{background:var(--surface-hover)}
+  .mlabel{font-size:13px;font-weight:600;min-width:110px;text-align:center}
+
+  /* Main */
+  .main{flex:1;display:flex;overflow:hidden}
+
+  /* Left Panel */
+  .lp{width:260px;min-width:220px;border-right:1px solid var(--border);display:flex;flex-direction:column;background:var(--surface)}
+  .lp-head{padding:8px 12px 6px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text-tri);border-bottom:1px solid var(--border-light);flex-shrink:0}
+  .lp-team{padding:2px 12px 6px;font-size:14px;font-weight:600;flex-shrink:0}
+  .el{flex:1;overflow-y:auto}
+
+  /* Ultra-dense event rows */
+  .ed{display:flex;align-items:flex-start;gap:0;padding:3px 10px 3px 6px;border-bottom:1px solid var(--border-light);min-height:24px}
+  .ed:hover{background:var(--surface-hover)}
+  .ed.wk{background:var(--weekend-bg)}
+  .edl{width:34px;flex-shrink:0;padding-top:1px}
+  .edl .dn{font-size:13px;font-weight:700;color:var(--text-sec);line-height:1}
+  .edl .dw{font-size:9px;color:var(--text-tri);text-transform:uppercase;letter-spacing:.02em}
+  .edc{flex:1;display:flex;flex-wrap:wrap;gap:0 8px;align-items:baseline}
+  .ev{font-size:12px;font-weight:500;line-height:1.5;white-space:nowrap}
+  .ev.vac{color:var(--vacation);font-weight:400;font-style:italic;font-size:11px}
+  .ev.ins{color:var(--instruction);font-weight:400;font-size:10.5px}
+  .ev.emp{color:var(--text-tri);font-weight:400}
+  .ev-sep{color:var(--text-tri);font-size:10px}
+
+  /* Right Panel */
+  .rp{flex:1;display:flex;flex-direction:column;overflow:hidden}
+  .rp-grid{flex:1;padding:8px 12px 0;overflow-y:auto}
+  .chr{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--text-tri);padding-bottom:4px;border-bottom:1px solid var(--border)}
+  .cg{display:grid;grid-template-columns:repeat(7,1fr);border-left:1px solid var(--border)}
+  .cc{border-right:1px solid var(--border);border-bottom:1px solid var(--border);min-height:80px;padding:3px 4px;font-size:11px;position:relative}
+  .cc:hover{background:var(--surface-hover)}
+  .cc.wk{background:var(--weekend-bg)}
+  .cc.emp{background:var(--bg)}
+  .cdn{font-size:12px;font-weight:600;color:var(--text-sec);margin-bottom:2px}
+
+  .cs{display:flex;align-items:center;gap:2px;padding:1px 0;line-height:1.3}
+  .csb{width:3px;min-height:13px;border-radius:1px;flex-shrink:0}
+  .csb.day{background:var(--tag-day)}.csb.night{background:var(--tag-night)}.csb.weekend{background:var(--tag-wknd)}.csb.allday{background:var(--tag-allday)}.csb.exception{background:var(--tag-exc)}
+  .cst{font-size:10.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .csl{font-size:9px;color:var(--text-tri)}
+
+  /* Notes under calendar */
+  .rn{flex-shrink:0;border-top:1px solid var(--border);padding:8px 12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:11px}
+  .rn h4{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text-tri);margin-bottom:3px}
+  .rn .nl{padding:1px 0;color:var(--text)}
+  .rn textarea{width:100%;min-height:28px;margin-top:2px;font-family:inherit;font-size:11px;border:1px solid var(--border);border-radius:4px;padding:4px 6px;background:var(--bg);color:var(--text);resize:vertical}
+  .rn textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+
+  ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:0}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-left">
+    <div class="nav-brand">PS Pipeline</div>
+    <div class="nav-tabs">
+      <div class="nav-tab active">Schedules</div>
+      <div class="nav-tab">Contacts</div>
+      <div class="nav-tab">Distribution</div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <button class="nbtn" onclick="toggleTheme()">🌓</button>
+    <button class="nbtn">📋 Contacts</button>
+    <button class="nbtn">📤 Export</button>
+    <button class="nbtn">⚙</button>
+  </div>
+</div>
+
+<div class="toolbar">
+  <div class="tl">
+    <select id="teamSel"></select>
+    <select id="facSel"></select>
+    <div class="mnav">
+      <button onclick="chMo(-1)">‹</button>
+      <span class="mlabel" id="moLbl"></span>
+      <button onclick="chMo(1)">›</button>
+    </div>
+  </div>
+  <div class="tr">
+    PDF: <strong>Mar 15, 3:42 PM</strong>
+    <span style="color:var(--border)">|</span>
+    Sent: <strong>Mar 15, 3:45 PM</strong>
+  </div>
+</div>
+
+<div class="main">
+  <div class="lp">
+    <div class="lp-head">OUTLOOK EVENTS</div>
+    <div class="lp-team" id="lpTeam"></div>
+    <div class="el" id="el"></div>
+  </div>
+  <div class="rp">
+    <div class="rp-grid">
+      <div class="chr"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+      <div class="cg" id="cg"></div>
+    </div>
+    <div class="rn">
+      <div><h4>Facility Notes</h4><div id="fnl"></div><textarea placeholder="Add notes..."></textarea></div>
+      <div><h4>Contact / Distribution</h4><div id="cnl"></div><textarea placeholder="Add contacts..."></textarea></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const T={
+  'team-1':{n:'Team 1',ol:'Team1 Group Cal',f:[{i:'st-thomas-west',n:'St. Thomas West',m:1},{i:'sumner-regional',n:'Sumner Regional'}]},
+  'team-2':{n:'Team 2',ol:'CMC POD (Soni)',f:[{i:'cmc',n:'CMC',m:1},{i:'southern-hills',n:'Southern Hills'},{i:'select-specialty',n:'Select Specialty'}]},
+  'team-3':{n:'Team 3',ol:'4Call (Rowbatham)',f:[{i:'skyline',n:'Skyline',m:1},{i:'hendersonville',n:'Hendersonville'}]},
+  'team-4':{n:'Team 4',ol:'Team4 Group Cal',f:[{i:'st-thomas-midtown',n:'St. Thomas Midtown',m:1},{i:'summit',n:'Summit'},{i:'vwch',n:'VWCH'}]},
+  'team-5':{n:'Team 5',ol:'Team 5 (Rezk)',f:[{i:'maury-regional',n:'Maury Regional',m:1},{i:'horizon',n:'Horizon'},{i:'williamson',n:'Williamson/Encompass'}]},
+  'team-6':{n:'Team 6',ol:'(No calendar)',f:[{i:'st-thomas-rutherford',n:'STR',m:1},{i:'stonecrest',n:'Stonecrest'}]},
+  'team-7':{n:'Team 7',ol:'(No calendar)',f:[{i:'tennova',n:'Tennova Clarksville',m:1},{i:'jsmc',n:'JSMC'},{i:'deaconess',n:'Deaconess'}]}
+};
+
+const D={
+  'team-1':{
+    o:{2:[{n:'Chanda'}],3:[{n:'Karam'}],4:[{n:'Mundra'}],5:[{n:'Leavitt'}],6:[{n:'Chanda'}],7:[{n:'Chanda'}],8:[{n:'Chanda'}],9:[{n:'Karam'}],10:[{n:'Chanda'}],11:[{n:'Leavitt'}],12:[{n:'Chanda'}],13:[{n:'Leavitt'}],14:[{n:'Leavitt'}],15:[{n:'Leavitt'}],16:[{n:'Karam'}],17:[{n:'Mundra'}],18:[{n:'Leavitt'}],19:[{n:'Mundra'}],20:[{n:'Atkinson'}],21:[{n:'Atkinson'}],22:[{n:'Atkinson'}],23:[{n:'Mundra'}],24:[{n:'Karam'}],25:[{n:'Leavitt'}],26:[{n:'Chanda'}],27:[{n:'Mundra'}],28:[{n:'Mundra'}],29:[{n:'Mundra'}],30:[{n:'Leavitt'}],31:[{n:'Mundra'}]},
+    p:{1:[{n:'Mundra',t:'allday',m:'all day'}],2:[{n:'Chanda',t:'allday',m:'all day'}],3:[{n:'Karam',t:'allday',m:'all day'}],4:[{n:'Mundra',t:'allday',m:'all day'}],5:[{n:'Leavitt',t:'allday',m:'all day'}],6:[{n:'Chanda',t:'allday',m:'all day'}],7:[{n:'Chanda',t:'allday',m:'all day'}],8:[{n:'Chanda',t:'allday',m:'all day'}],9:[{n:'Karam',t:'allday',m:'all day'}],10:[{n:'Chanda',t:'allday',m:'all day'}],11:[{n:'Leavitt',t:'allday',m:'all day'}],12:[{n:'Chanda',t:'allday',m:'all day'}],13:[{n:'Leavitt',t:'allday',m:'all day'}],14:[{n:'Leavitt',t:'allday',m:'all day'}],15:[{n:'Leavitt',t:'allday',m:'all day'}],16:[{n:'Karam',t:'allday',m:'all day'}],17:[{n:'Mundra',t:'allday',m:'all day'}],18:[{n:'Leavitt',t:'allday',m:'all day'}],19:[{n:'Mundra',t:'allday',m:'all day'}],20:[{n:'Atkinson',t:'allday',m:'all day'}],21:[{n:'Atkinson',t:'allday',m:'all day'}],22:[{n:'Atkinson',t:'allday',m:'all day'}],23:[{n:'Mundra',t:'allday',m:'all day'}],24:[{n:'Karam',t:'allday',m:'all day'}],25:[{n:'Leavitt',t:'allday',m:'all day'}],26:[{n:'Chanda',t:'allday',m:'all day'}],27:[{n:'Mundra',t:'allday',m:'all day'}],28:[{n:'Mundra',t:'allday',m:'all day'}],29:[{n:'Mundra',t:'allday',m:'all day'}],30:[{n:'Leavitt',t:'allday',m:'all day'}],31:[{n:'Mundra',t:'allday',m:'all day'}]},
+    fn:['Night call follows Team 1 master','Day call at STW = same as night call'],
+    cn:['Calendar owner: Dr. Leavitt','Distribution: Email PDF']
+  },
+  'team-4':{
+    o:{2:[{n:'McCoy'}],3:[{n:'Choma'}],4:[{n:'Khan'}],5:[{n:'Molini'}],
+      6:[{n:'McCoy'}],7:[{n:'McCoy'}],8:[{n:'McCoy'}],
+      9:[{n:'Khan off',c:'v'},{n:'Choma'}],10:[{n:'Khan off',c:'v'},{n:'McCoy'}],11:[{n:'Khan off',c:'v'},{n:'Choma'}],
+      12:[{n:'Molini'}],
+      13:[{n:'Choma off',c:'v'},{n:'McCoy'}],14:[{n:'Choma off',c:'v'},{n:'McCoy'}],15:[{n:'Choma off',c:'v'},{n:'McCoy'}],
+      16:[{n:'Choma off',c:'v'},{n:'Khan off',c:'v'},{n:'McCoy'}],17:[{n:'Choma off',c:'v'},{n:'Khan off',c:'v'},{n:'McCoy'}],
+      18:[{n:'Choma off',c:'v'},{n:'Khan'}],
+      19:[{n:'Choma off',c:'v'},{n:'McCoy off',c:'v'},{n:'Molini'}],
+      20:[{n:'Choma off',c:'v'},{n:'McCoy off',c:'v'}],21:[{n:'Choma off',c:'v'},{n:'McCoy off',c:'v'}],22:[{n:'Choma off',c:'v'},{n:'McCoy off',c:'v'}],
+      23:[{n:'Choma off',c:'v'},{n:'Khan'}],24:[{n:'Choma'}],25:[{n:'McCoy'}],26:[{n:'Molini'}],
+      27:[{n:'Khan'}],28:[{n:'Khan'}],29:[{n:'Khan'}],
+      30:[{n:'McCoy'}],31:[{n:'Khan'}]},
+    p:{2:[{n:'McCoy',t:'allday',m:'all day'}],3:[{n:'Choma',t:'day',m:'7A–5P'},{n:'McCoy',t:'night',m:'5P–7A'}],
+      4:[{n:'Khan',t:'day',m:'7A–5P'},{n:'Choma',t:'night',m:'5P–7A'}],
+      5:[{n:'Molini',t:'day',m:'7A–5P'},{n:'Khan',t:'night',m:'5P–7A'}],
+      6:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'McCoy',t:'weekend',m:'5P–7A'}],
+      7:[{n:'McCoy',t:'weekend',m:'all day'}],8:[{n:'McCoy',t:'weekend',m:'all day'}],
+      9:[{n:'Choma',t:'day',m:'7A–5P'},{n:'McCoy',t:'night',m:'5P–7A'}],
+      10:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'Choma',t:'night',m:'5P–7A'}],
+      11:[{n:'Choma',t:'day',m:'7A–5P'},{n:'Molini',t:'night',m:'5P–7A'}],
+      12:[{n:'Molini',t:'day',m:'7A–5P'},{n:'McCoy',t:'night',m:'5P–7A'}],
+      13:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'McCoy',t:'weekend',m:'5P–7A'}],
+      14:[{n:'McCoy',t:'weekend',m:'all day'}],15:[{n:'McCoy',t:'weekend',m:'all day'}],
+      16:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'Molini',t:'night',m:'5P–7A'}],
+      17:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'Khan',t:'night',m:'5P–7A'}],
+      18:[{n:'Khan',t:'day',m:'7A–5P'},{n:'McCoy',t:'night',m:'5P–7A'}],
+      19:[{n:'Molini',t:'day',m:'7A–5P'},{n:'Khan',t:'night',m:'5P–7A'}],
+      20:[{n:'Khan',t:'day',m:'7A–5P'},{n:'Khan',t:'weekend',m:'5P–7A'}],
+      21:[{n:'Khan',t:'weekend',m:'all day'}],22:[{n:'Khan',t:'weekend',m:'all day'}],
+      23:[{n:'Khan',t:'day',m:'7A–5P'},{n:'Molini',t:'night',m:'5P–7A'}],
+      24:[{n:'Choma',t:'day',m:'7A–5P'},{n:'Khan',t:'night',m:'5P–7A'}],
+      25:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'Choma',t:'night',m:'5P–7A'}],
+      26:[{n:'Molini',t:'day',m:'7A–5P'},{n:'McCoy',t:'night',m:'5P–7A'}],
+      27:[{n:'Khan',t:'day',m:'7A–5P'},{n:'Khan',t:'weekend',m:'5P–7A'}],
+      28:[{n:'Khan',t:'weekend',m:'all day'}],29:[{n:'Khan',t:'weekend',m:'all day'}],
+      30:[{n:'McCoy',t:'day',m:'7A–5P'},{n:'Choma',t:'night',m:'5P–7A'}],
+      31:[{n:'Khan',t:'day',m:'7A–5P'},{n:'McCoy',t:'night',m:'5P–7A'}]},
+    fn:['Standard 5PM split','Night follows Midtown master'],
+    cn:['Calendar: Choma / McCoy','Team 4 supports Sumner day call (Team 1)']
+  },
+  'team-2':{
+    o:{5:[{n:'Karam'}],6:[{n:'Coleman'}],
+      7:[{n:'Cox Off',c:'v'},{n:'Soni Off – S.Hills: Coleman 3/9-11, Karam 3/12-15',c:'i'}],
+      8:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'}],
+      9:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Soni'}],
+      10:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Karam'}],
+      11:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Coleman'}],
+      12:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Karam'}],
+      13:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Linfert'}],
+      14:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Linfert'}],
+      15:[{n:'Cox Off',c:'v'},{n:'Soni Off',c:'v'},{n:'Linfert'}],
+      16:[{n:'CMC: Cox M-W Soni, Th-F Karam',c:'i'},{n:'Coleman'}],
+      17:[{n:'Soni'}],18:[{n:'Karam'}],19:[{n:'Linfert'}],
+      20:[{n:'Coleman'}],21:[{n:'Coleman'}],22:[{n:'Coleman'}],
+      23:[{n:'Soni'}],24:[{n:'Cox'}],25:[{n:'Karam'}],
+      26:[{n:'Linfert'}],27:[{n:'Coleman'}],
+      28:[{n:'Karam on Vacation',c:'v'},{n:'Coleman'}],
+      29:[{n:'Karam on Vacation',c:'v'},{n:'Coleman'}],
+      30:[{n:'Karam on Vacation',c:'v'},{n:'Soni'}],
+      31:[{n:'Karam on Vacation',c:'v'},{n:'Cox'}]},
+    p:{1:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Soni',t:'night',m:'2P–7A'}],2:[{n:'Soni',t:'day',m:'7A–2P'},{n:'Cox',t:'night',m:'2P–7A'}],3:[{n:'Cox',t:'day',m:'7A–2P'},{n:'Coleman',t:'night',m:'2P–7A'}],4:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Karam',t:'night',m:'2P–7A'}],5:[{n:'Karam',t:'day',m:'7A–2P'},{n:'Karam',t:'night',m:'2P–7A'}],6:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Coleman',t:'weekend',m:'2P–7A'}],7:[{n:'Coleman',t:'weekend',m:'all day'}],8:[{n:'Coleman',t:'weekend',m:'all day'}],9:[{n:'Soni',t:'day',m:'7A–2P'},{n:'Soni',t:'night',m:'2P–7A'}],10:[{n:'Karam',t:'day',m:'7A–2P'},{n:'Karam',t:'night',m:'2P–7A'}],11:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Coleman',t:'night',m:'2P–7A'}],12:[{n:'Karam',t:'day',m:'7A–2P'},{n:'Karam',t:'night',m:'2P–7A'}],13:[{n:'Linfert',t:'day',m:'7A–2P'},{n:'Linfert',t:'weekend',m:'2P–7A'}],14:[{n:'Linfert',t:'weekend',m:'all day'}],15:[{n:'Linfert',t:'weekend',m:'all day'}],16:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Coleman',t:'night',m:'2P–7A'}],17:[{n:'Soni',t:'day',m:'7A–2P'},{n:'Soni',t:'night',m:'2P–7A'}],18:[{n:'Karam',t:'day',m:'7A–2P'},{n:'Karam',t:'night',m:'2P–7A'}],19:[{n:'Linfert',t:'day',m:'7A–2P'},{n:'Linfert',t:'night',m:'2P–7A'}],20:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Coleman',t:'weekend',m:'2P–7A'}],21:[{n:'Coleman',t:'weekend',m:'all day'}],22:[{n:'Coleman',t:'weekend',m:'all day'}],23:[{n:'Soni',t:'day',m:'7A–2P'},{n:'Soni',t:'night',m:'2P–7A'}],24:[{n:'Cox',t:'day',m:'7A–2P'},{n:'Cox',t:'night',m:'2P–7A'}],25:[{n:'Karam',t:'day',m:'7A–2P'},{n:'Karam',t:'night',m:'2P–7A'}],26:[{n:'Linfert',t:'day',m:'7A–2P'},{n:'Linfert',t:'night',m:'2P–7A'}],27:[{n:'Coleman',t:'day',m:'7A–2P'},{n:'Coleman',t:'weekend',m:'2P–7A'}],28:[{n:'Coleman',t:'weekend',m:'all day'}],29:[{n:'Coleman',t:'weekend',m:'all day'}],30:[{n:'Soni',t:'day',m:'7A–2P'},{n:'Soni',t:'night',m:'2P–7A'}],31:[{n:'Cox',t:'day',m:'7A–2P'},{n:'Cox',t:'night',m:'2P–7A'}]},
+    fn:['Friday weekend starts at 2PM','Calendar managed by Dr. Soni'],
+    cn:['Calendar owner: Dr. Soni','Select: Coleman default','S.Hills: Soni default']
+  },
+  'team-5':{
+    o:{1:[{n:'Yu'}],2:[{n:'Cardona'}],3:[{n:'Cardona'}],4:[{n:'Wilbeck'}],5:[{n:'Rezk'}],6:[{n:'Rezk'}],7:[{n:'Rezk'}],8:[{n:'Rezk'}],9:[{n:'Rezk'}],10:[{n:'Rezk'}],11:[{n:'Wilbeck'}],12:[{n:'Rezk'}],13:[{n:'Wilbeck'}],14:[{n:'Wilbeck'}],15:[{n:'Wilbeck'}],16:[{n:'Cardona'}],17:[{n:'Yu'}],18:[{n:'Rezk off',c:'v'},{n:'Wilbeck'}],19:[{n:'Rezk off',c:'v'},{n:'Yu'}],20:[{n:'Rezk off',c:'v'},{n:'Cardona'}],21:[{n:'Cardona'}],22:[{n:'Cardona'}],23:[{n:'Rezk'}],24:[{n:'Cardona'}],25:[{n:'Wilbeck'}],26:[{n:'Yu'}],27:[{n:'Rezk'}],28:[{n:'Rezk'}],29:[{n:'Rezk'}],30:[{n:'Cardona'}],31:[{n:'Cardona'}]},
+    p:{1:[{n:'Yu',t:'allday',m:'all day'}],2:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Rezk',t:'night',m:'3P–7A'}],3:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Wilbeck',t:'night',m:'3P–7A'}],4:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Yu',t:'night',m:'3P–7A'}],5:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Cardona',t:'night',m:'3P–7A'}],6:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Rezk',t:'weekend',m:'3P–7A'}],7:[{n:'Rezk',t:'weekend',m:'all day'}],8:[{n:'Rezk',t:'weekend',m:'all day'}],9:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Rezk',t:'night',m:'3P–7A'}],10:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Rezk',t:'night',m:'3P–7A'}],11:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Wilbeck',t:'night',m:'3P–7A'}],12:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Rezk',t:'night',m:'3P–7A'}],13:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Wilbeck',t:'weekend',m:'3P–7A'}],14:[{n:'Wilbeck',t:'weekend',m:'all day'}],15:[{n:'Wilbeck',t:'weekend',m:'all day'}],16:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Cardona',t:'night',m:'3P–7A'}],17:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Yu',t:'night',m:'3P–7A'}],18:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Wilbeck',t:'night',m:'3P–7A'}],19:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Yu',t:'night',m:'3P–7A'}],20:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Cardona',t:'weekend',m:'3P–7A'}],21:[{n:'Cardona',t:'weekend',m:'all day'}],22:[{n:'Cardona',t:'weekend',m:'all day'}],23:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Rezk',t:'night',m:'3P–7A'}],24:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Cardona',t:'night',m:'3P–7A'}],25:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Wilbeck',t:'night',m:'3P–7A'}],26:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Yu',t:'night',m:'3P–7A'}],27:[{n:'Rezk',t:'day',m:'7A–3P'},{n:'Rezk',t:'weekend',m:'3P–7A'}],28:[{n:'Rezk',t:'weekend',m:'all day'}],29:[{n:'Rezk',t:'weekend',m:'all day'}],30:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Cardona',t:'night',m:'3P–7A'}],31:[{n:'Cardona',t:'day',m:'7A–3P'},{n:'Yu',t:'night',m:'3P–7A'}]},
+    fn:['Maury is driver calendar','Friday weekend starts at 3PM'],
+    cn:['Calendar owner: Dr. Rezk','Horizon day: Yu (Atkinson bkup)','Williamson day: Wilbeck (T2)']
+  }
+};
+
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const MO=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const S={team:'team-4',fac:'st-thomas-midtown',yr:2026,mo:3,theme:'light'};
+
+function render(){
+  const t=T[S.team]||T['team-1'];const d=D[S.team]||D['team-1'];
+  const dim=new Date(S.yr,S.mo,0).getDate();
+  const sdow=new Date(S.yr,S.mo-1,1).getDay();
+
+  document.getElementById('teamSel').innerHTML=Object.entries(T).map(([k,v])=>`<option value="${k}"${k===S.team?' selected':''}>${v.n}</option>`).join('');
+  document.getElementById('facSel').innerHTML=t.f.map(f=>`<option value="${f.i}"${f.i===S.fac?' selected':''}>${f.n}${f.m?' ●':''}</option>`).join('');
+  document.getElementById('moLbl').textContent=`${MO[S.mo]} ${S.yr}`;
+  document.getElementById('lpTeam').textContent=`${t.n} — ${t.ol}`;
+
+  // Left: dense event list
+  let lh='';
+  for(let i=1;i<=dim;i++){
+    const dow=new Date(S.yr,S.mo-1,i).getDay();
+    const wk=dow===0||dow===6;
+    const evts=(d.o&&d.o[i])||[];
+    lh+=`<div class="ed${wk?' wk':''}"><div class="edl"><span class="dn">${i}</span><span class="dw">${DOW[dow]}</span></div><div class="edc">`;
+    if(!evts.length){lh+=`<span class="ev emp">—</span>`}
+    else{
+      evts.forEach((e,idx)=>{
+        if(idx>0)lh+=`<span class="ev-sep">·</span>`;
+        const c=e.c==='v'?'vac':e.c==='i'?'ins':'';
+        lh+=`<span class="ev ${c}">${e.n}</span>`;
+      });
+    }
+    lh+=`</div></div>`;
+  }
+  document.getElementById('el').innerHTML=lh;
+
+  // Right: calendar grid
+  let gh='';
+  for(let i=0;i<sdow;i++)gh+=`<div class="cc emp"></div>`;
+  for(let i=1;i<=dim;i++){
+    const dow=new Date(S.yr,S.mo-1,i).getDay();
+    const wk=dow===0||dow===6;
+    const sh=(d.p&&d.p[i])||[];
+    gh+=`<div class="cc${wk?' wk':''}"><div class="cdn">${i}</div>`;
+    sh.forEach(s=>{
+      gh+=`<div class="cs"><div class="csb ${s.t}"></div><span class="cst">${s.n}</span><span class="csl">${s.m}</span></div>`;
+    });
+    gh+=`</div>`;
+  }
+  const tot=sdow+dim;const trail=(7-(tot%7))%7;
+  for(let i=0;i<trail;i++)gh+=`<div class="cc emp"></div>`;
+  document.getElementById('cg').innerHTML=gh;
+
+  document.getElementById('fnl').innerHTML=(d.fn||[]).map(n=>`<div class="nl">${n}</div>`).join('');
+  document.getElementById('cnl').innerHTML=(d.cn||[]).map(n=>`<div class="nl">${n}</div>`).join('');
+}
+
+function chMo(d){S.mo+=d;if(S.mo>12){S.mo=1;S.yr++}if(S.mo<1){S.mo=12;S.yr--}render()}
+function toggleTheme(){S.theme=S.theme==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',S.theme)}
+document.getElementById('teamSel').addEventListener('change',e=>{S.team=e.target.value;const t=T[S.team];if(t)S.fac=t.f[0].i;render()});
+document.getElementById('facSel').addEventListener('change',e=>{S.fac=e.target.value;render()});
+render();
+</script>
+</body>
+</html>
