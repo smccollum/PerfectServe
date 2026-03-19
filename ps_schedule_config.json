@@ -1,0 +1,51 @@
+{
+  "team-1": {
+    "schedules": [
+      { "id": "SCH-8VUUWSB69", "facility": "st-thomas-west", "name": "St. Thomas West", "master": true, "active": true },
+      { "id": "SCH-8VUUX40PM", "facility": "sumner-regional", "name": "Sumner Regional", "follows": "SCH-8VUUWSB69", "active": true }
+    ]
+  },
+  "team-2": {
+    "schedules": [
+      { "id": "SCH-8VUUWSEMY", "facility": "cmc", "name": "CMC", "master": true, "active": true },
+      { "id": "SCH-8VUUWSFAL", "facility": "southern-hills", "name": "Southern Hills", "follows": "SCH-8VUUWSEMY", "active": true },
+      { "id": "SCH-8VUUX5141", "facility": "select-specialty", "name": "Select Specialty", "follows": "SCH-8VUUWSEMY", "active": true, "note": "Mislabeled as Team 3 in PS" }
+    ]
+  },
+  "team-3": {
+    "schedules": [
+      { "id": "SCH-8VUUWSD5L", "facility": "skyline", "name": "Skyline", "master": true, "active": true },
+      { "id": "SCH-8VUUX50X6", "facility": "hendersonville", "name": "Hendersonville", "follows": "SCH-8VUUWSD5L", "active": true },
+      { "id": "SCH-8VUUX503N", "facility": "skyline-consults", "name": "Skyline Consults", "follows": "SCH-8VUUWSD5L", "active": true, "note": "Day call only — separate from night call calendar" }
+    ]
+  },
+  "team-4": {
+    "schedules": [
+      { "id": "SCH-8VUUWSEM0", "facility": "st-thomas-midtown", "name": "St. Thomas Midtown", "master": true, "active": true },
+      { "id": "SCH-8VUUX8X9X", "facility": "summit", "name": "Summit", "follows": "SCH-8VUUWSEM0", "active": true },
+      { "id": "SCH-8VUUX8XIK", "facility": "vwch", "name": "VWCH (Vanderbilt Wilson)", "follows": "SCH-8VUUWSEM0", "active": true }
+    ]
+  },
+  "team-5": {
+    "schedules": [
+      { "id": "SCH-8VUUWSF9V", "facility": "maury-regional", "name": "Maury Regional", "master": true, "active": true },
+      { "id": "SCH-8VUUWSFCA", "facility": "horizon", "name": "Horizon (Dickson)", "follows": "SCH-8VUUWSF9V", "active": true },
+      { "id": "SCH-8VUUWSF8Q", "facility": "williamson-encompass", "name": "Williamson / Encompass", "follows": "SCH-8VUUWSF9V", "active": true }
+    ]
+  },
+  "team-6": {
+    "schedules": [
+      { "id": "SCH-8VUUWSD3B", "facility": "st-thomas-rutherford", "name": "St. Thomas Rutherford", "master": true, "active": true },
+      { "id": "SCH-8VUUWXS99", "facility": "stonecrest", "name": "Stonecrest", "follows": "SCH-8VUUWSD3B", "active": true },
+      { "id": "SCH-8VV5LE2N6", "facility": "trustpoint", "name": "Trustpoint", "follows": "SCH-8VUUWSD3B", "active": false, "note": "New — active starting April 2026" },
+      { "id": "SCH-8VUUX3FSD", "facility": "harton-heritage", "name": "Harton Heritage", "follows": "SCH-8VUUWSD3B", "active": false, "note": "May be retired — verify" }
+    ]
+  },
+  "team-7": {
+    "schedules": [
+      { "id": "SCH-8VUUWSEPP", "facility": "tennova-clarksville", "name": "Tennova Clarksville", "master": true, "active": true },
+      { "id": "SCH-8VUUWXRTT", "facility": "deaconess", "name": "Deaconess", "follows": "SCH-8VUUWSEPP", "active": true },
+      { "id": "SCH-8VUUWXS6J", "facility": "jsmc", "name": "JSMC", "follows": "SCH-8VUUWSEPP", "active": true }
+    ]
+  }
+}
