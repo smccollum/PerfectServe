@@ -13,14 +13,49 @@ This document captures the scheduling domain knowledge that helps agents underst
 - Extra/cross-team doctors are annotations for day coverage, not changes to core team truth
 - Accepted facility-night differences must be explicit and require a reason — silent drift is dangerous
 
+### How PerfectServe Implements This
+
+Each team has one **master calendar** facility on PerfectServe. Sub-calendar facilities reference the master instead of duplicating night/weekend data:
+
+- **Master calendar**: has actual doctor names for all shifts (day, night, weekend)
+- **Sub-calendar**: night call and weekend entries say **"Follow [Master Facility]"** instead of a doctor name. Only day call has facility-specific assignments.
+
+Example: Team 1's Sumner Regional night call for March 22nd shows "Follow St. Thomas West" instead of "5PM-7AM Mundra".
+
+**Pipeline implication**: the scraper must scrape the master calendar first, then resolve "Follow" references from master data when building sub-calendar PDFs.
+
+### Master → Sub-Calendar Mapping
+
+| Team | Master Facility | Sub-Calendars |
+|------|----------------|---------------|
+| Team 1 | St. Thomas West | Sumner Regional |
+| Team 2 | CMC | Southern Hills, Select Specialty |
+| Team 3 | Skyline | Hendersonville |
+| Team 4 | St. Thomas Midtown | Summit, VWCH |
+| Team 5 | Maury Regional | Horizon, Williamson/Encompass |
+| Team 6 | St. Thomas Rutherford | Stonecrest |
+| Team 7 | Tennova Clarksville | JSMC, Deaconess |
+
 ### Example: Team 1 / Sumner Regional
 
 St. Thomas West = full Team 1 all-day coverage. But Sumner Regional is a *mixed view*:
 - Weekday/Friday day: driven by Team 4 doctors (Choma default, Molini backup)
-- Night: follows Team 1 master
-- Weekend: all-day coverage
+- Night: follows Team 1 master (resolved from St. Thomas West data)
+- Weekend: all-day coverage (resolved from St. Thomas West data)
 
 If scraped data shows Team 4 names at a Team 1 facility during the day, **that's correct**.
+
+---
+
+## Time Definitions (Non-Negotiable)
+
+These definitions are universal across all teams:
+
+- **"All day"** = **7AM → 7AM next day** (NOT midnight to midnight, NOT 12AM-12PM)
+- **"Night"** = split time → 7AM next day (e.g., 5PM-7AM for most teams)
+- **"Weekend"** = **Friday split time → Monday 7AM** (Friday night + all day Saturday + all day Sunday)
+  - A "weekend" shift starts Friday evening, NOT Saturday morning
+  - Saturday and Sunday are each 7AM → 7AM next day
 
 ---
 
